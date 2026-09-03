@@ -1075,8 +1075,8 @@ a {
 ============================= */
 .about-section-academic {
   position: relative;
-  padding-top: 50px;
-  padding-bottom: 70px;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .about-header-top {
@@ -1516,100 +1516,164 @@ a {
 }
 
 /* ============================
-   SKILLS SECTION
+   SKILLS SECTION (Interactive Tech Constellation)
 ============================= */
 .skills-section {
   background: var(--bg-secondary);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 60px;
-}
-
-.skill-card {
-  background: var(--gradient-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 28px;
-  transition: var(--transition);
   position: relative;
+  padding-top: 50px;
+  padding-bottom: 70px;
   overflow: hidden;
 }
 
-.skill-card::before {
-  content: '';
+.skills-header-top {
+  margin-bottom: 28px;
+}
+
+.skills-section-big-title {
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.skills-section-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Constellation Canvas & Layout matching user image */
+.constellation-wrapper {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background: radial-gradient(ellipse at center, rgba(17, 24, 39, 0.8) 0%, rgba(5, 5, 8, 0.98) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.constellation-canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--gradient-hero);
-  opacity: 0;
-  transition: var(--transition);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.skill-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(124, 58, 237, 0.4);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
-}
-
-.skill-card:hover::before {
-  opacity: 1;
-}
-
-.skill-card-header {
+/* Circular Constellation Nodes */
+.constellation-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.skill-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+.constellation-node:hover,
+.constellation-node.is-active {
+  transform: translate(-50%, -50%) scale(1.18);
+  z-index: 10;
+}
+
+.node-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0f121a;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
-.skill-card h3 {
-  font-size: 18px;
+.node-icon-svg {
+  font-size: 22px;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.constellation-node:hover .node-icon-svg,
+.constellation-node.is-active .node-icon-svg {
+  transform: scale(1.15);
+}
+
+.constellation-node:hover .node-circle,
+.constellation-node.is-active .node-circle {
+  background: #181729;
+}
+
+/* Tooltip Card on Hover */
+.constellation-tooltip {
+  position: absolute;
+  bottom: 18px;
+  right: 24px;
+  background: rgba(18, 18, 28, 0.9);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-color);
+  padding: 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  animation: fadeIn 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 20;
+}
+
+.tooltip-category {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tooltip-title {
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-.skill-card-desc {
-  font-size: 13px;
-  color: var(--text-muted);
+[data-theme="light"] .constellation-wrapper {
+  background: radial-gradient(ellipse at center, #ffffff 0%, #f1f5f9 100%);
+  border-color: rgba(109, 40, 217, 0.2);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Crisp white circular nodes with soft drop shadows in light mode */
+[data-theme="light"] .node-circle {
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 23, 42, 0.14);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
 }
 
-.skill-tag {
-  padding: 5px 12px;
-  background: rgba(124, 58, 237, 0.08);
-  border: 1px solid rgba(124, 58, 237, 0.15);
-  border-radius: 6px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-secondary);
-  transition: var(--transition);
+[data-theme="light"] .constellation-node:hover .node-circle,
+[data-theme="light"] .constellation-node.is-active .node-circle {
+  background: #f8fafc;
+  border-color: var(--accent-primary);
 }
 
-.skill-tag:hover {
-  background: rgba(124, 58, 237, 0.2);
-  border-color: rgba(124, 58, 237, 0.4);
-  color: var(--accent-secondary);
+/* Adapt Next.js and Express.js to dark in light mode so they are crisp and visible on white */
+[data-theme="light"] .node-next .node-icon-svg,
+[data-theme="light"] .node-express .node-icon-svg {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .constellation-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(109, 40, 217, 0.2);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
 }
 
 /* ============================
@@ -2552,12 +2616,12 @@ a {
 ============================= */
 .education-section {
   background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.03) 50%, transparent);
-  padding-top: 40px;
-  padding-bottom: 70px;
+  padding-top: 60px;
+  padding-bottom: 75px;
 }
 
 .education-header-top {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .education-section-big-title {
@@ -2569,9 +2633,9 @@ a {
 }
 
 .education-section-sub {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .education-timeline {
@@ -2579,7 +2643,8 @@ a {
   flex-direction: column;
   gap: 0;
   position: relative;
-  margin-top: 30px;
+  margin-top: 28px;
+  max-width: 1040px;
 }
 
 .education-item {
@@ -2593,12 +2658,12 @@ a {
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  width: 56px;
+  width: 54px;
 }
 
 .edu-dot {
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2619,7 +2684,7 @@ a {
 .edu-line {
   width: 3px;
   flex: 1;
-  min-height: 32px;
+  min-height: 24px;
   margin: 4px 0;
   border-radius: 2px;
   background: linear-gradient(to bottom, rgba(124, 58, 237, 0.5), rgba(6, 182, 212, 0.5));
@@ -2630,8 +2695,8 @@ a {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 28px 32px;
-  margin-bottom: 32px;
+  padding: 26px 32px;
+  margin-bottom: 24px;
   position: relative;
   overflow: hidden;
   transition: var(--transition);
@@ -2651,7 +2716,7 @@ a {
 .education-item:hover .education-card {
   border-color: rgba(124, 58, 237, 0.4);
   transform: translateX(6px);
-  box-shadow: -4px 0 24px rgba(124, 58, 237, 0.15), var(--shadow-card);
+  box-shadow: -4px 0 24px rgba(124, 58, 237, 0.16), var(--shadow-card);
 }
 
 .education-item:hover .education-card::before {
@@ -2662,8 +2727,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 14px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
@@ -2679,15 +2744,15 @@ a {
 
 .edu-period {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 
 .edu-degree {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: var(--font-display);
 }
 
@@ -2695,7 +2760,7 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--text-secondary);
   margin-bottom: 8px;
   font-weight: 500;
@@ -2705,39 +2770,17 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
 .edu-grade-badge {
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.edu-highlights {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.edu-highlights li {
-  font-size: 14px;
-  color: var(--text-secondary);
-  padding-left: 20px;
-  position: relative;
-}
-
-.edu-highlights li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--accent-primary);
+  padding: 4px 12px;
+  border-radius: 14px;
   font-size: 12px;
+  font-weight: 600;
 }
 
 /* ============================
