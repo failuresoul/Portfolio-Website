@@ -2835,10 +2835,12 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 12px 28px;
-  background: #0a0a0f;
-  border-bottom: 1px solid rgba(124, 58, 237, 0.3);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  padding: 14px 32px;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.35);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(124, 58, 237, 0.15) inset;
   flex-wrap: wrap;
   gap: 12px;
   box-sizing: border-box;
@@ -2855,24 +2857,25 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  color: #f1f0ff;
-  padding: 8px 18px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  color: #e2e0f8;
+  padding: 9px 20px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 13.5px;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.2px;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
 }
 
 .cv-back-btn:hover {
   border-color: #a855f7;
-  color: #a855f7;
-  background: rgba(168, 85, 247, 0.08);
-  transform: translateX(-2px);
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.12);
+  transform: translateX(-3px);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.2);
 }
 
 .cv-print-btn {
@@ -2882,23 +2885,25 @@ a {
   background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
   border: none;
   color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
+  padding: 9px 22px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 13.5px;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.3px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.45), 0 0 0 1px rgba(124, 58, 237, 0.3);
 }
 
 .cv-print-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.6);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.65), 0 0 0 1px rgba(124, 58, 237, 0.4);
+  filter: brightness(1.08);
 }
 
 /* The actual paper */
+
 .cv-paper {
   max-width: 860px;
   margin: 0 auto;
@@ -3645,7 +3650,7 @@ a {
   /* Hero collapses to single column at tablet */
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 48px;
     padding: 100px 0 36px;
     text-align: center;
   }
@@ -3669,6 +3674,7 @@ a {
 
   .hero-image-wrapper {
     order: -1;
+    margin-bottom: 20px;
   }
 
   .hero-image-container {
@@ -4164,82 +4170,259 @@ a {
 
 @media print {
 
+  /* ── Hide ALL non-CV elements ── */
   .no-print,
-  .cv-action-bar {
+  .cv-action-bar,
+  .navbar,
+  .hero,
+  .about-section-academic,
+  .education-section,
+  .skills-section,
+  .projects-section,
+  .club-section,
+  .contact-section,
+  .footer,
+  canvas,
+  .constellation-wrapper,
+  .animated-bg {
     display: none !important;
   }
 
+  /* ── Force color printing ── */
   * {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
+  /* ── Reset html/body to A4 white ── */
   html,
   body {
-    width: 210mm;
-    background: white !important;
-    margin: 0;
-    padding: 0;
+    width: 210mm !important;
+    background: #ffffff !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 10.5pt !important;
+    /* Ensure desktop rendering — no mobile responsive overrides */
+    min-width: 210mm !important;
+    /* Override any dark-theme or mobile CSS variables */
+    --bg-primary: #ffffff !important;
+    --bg-secondary: #ffffff !important;
+    --bg-card: #ffffff !important;
+    --text-primary: #000 !important;
+    --text-secondary: #222 !important;
   }
 
+  /* ── CV page wrapper ── */
   .cv-page {
-    background: white !important;
+    background: #ffffff !important;
     padding: 0 !important;
     margin: 0 !important;
+    min-height: unset !important;
   }
 
+  /* ── The paper itself — full A4 width, no extra padding (page margin handles it) ── */
   .cv-paper {
     box-shadow: none !important;
     max-width: 100% !important;
     width: 100% !important;
-    padding: 12mm 18mm !important;
+    /* @page margin handles outer spacing — paper padding fills the rest */
+    padding: 0 !important;
     margin: 0 !important;
-    /* Allow content to flow across multiple A4 pages */
+    background: #ffffff !important;
+    color: #000 !important;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
     page-break-after: auto;
     break-after: auto;
+    /* Prevent orphan lines at page breaks */
+    orphans: 3;
+    widows: 3;
   }
 
-  /* Keep section headings with their content */
-  .cv-section {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  /* Each entry should try to stay together */
-  .cv-entry {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  /* Don't break bullet lists in the middle */
-  .cv-bullets {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  /* Name header stays on first page */
+  /* ── CV Header (name + contacts) ── */
   .cv-header {
+    text-align: center !important;
+    margin-bottom: 18px !important;
     page-break-after: avoid;
     break-after: avoid;
   }
 
   .cv-name {
-    font-size: 20pt;
+    font-size: 20pt !important;
+    color: #000 !important;
+    font-variant: small-caps !important;
+    letter-spacing: 3px !important;
+  }
+
+  .cv-contacts {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 4px 16px !important;
+    font-size: 10pt !important;
+    color: #222 !important;
+  }
+
+  .cv-contacts a {
+    color: #000 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #aaa !important;
+  }
+
+  /* ── Sections ── */
+  .cv-section {
+    margin-bottom: 14px !important;
+    /* Let large sections (Projects, etc.) flow naturally across pages.
+       Forcing break-inside on a section taller than a single page is what
+       caused broken/blank pages on PDF export. */
+    page-break-inside: auto;
+    break-inside: auto;
   }
 
   .cv-section-heading {
-    font-size: 11pt;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    color: #000 !important;
+    margin: 0 0 3px !important;
     page-break-after: avoid;
     break-after: avoid;
   }
 
   .cv-rule {
+    border: none !important;
+    border-top: 1.5px solid #000 !important;
+    margin: 3px 0 10px !important;
     page-break-after: avoid;
     break-after: avoid;
   }
 
+  /* ── Entries ── */
+  .cv-entry {
+    margin-bottom: 10px !important;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .cv-entry-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .cv-entry-org,
+  .cv-entry-proj {
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+  }
+
+  .cv-entry-date {
+    font-size: 10.5pt !important;
+    color: #000 !important;
+    white-space: nowrap !important;
+    text-align: right !important;
+  }
+
+  .cv-entry-date a {
+    font-size: 9pt !important;
+    color: #555 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #aaa !important;
+  }
+
+  .cv-entry-sub {
+    font-size: 10.5pt !important;
+    font-style: italic !important;
+    color: #222 !important;
+  }
+
+  .cv-proj-tech {
+    font-size: 10.5pt !important;
+    font-style: italic !important;
+    color: #333 !important;
+  }
+
+  /* ── Bullets ── */
+  .cv-bullets {
+    margin: 4px 0 0 0 !important;
+    padding-left: 22px !important;
+    list-style-type: disc !important;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .cv-bullets li {
+    font-size: 10.5pt !important;
+    color: #111 !important;
+    margin-bottom: 3px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ── Skills / paragraphs ── */
+  .cv-skills-block {
+    margin-top: 2px !important;
+  }
+
+  .cv-skill-line {
+    font-size: 10.5pt !important;
+    color: #111 !important;
+    margin-bottom: 4px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cv-skill-line strong,
+  .cv-bullets li strong {
+    font-weight: 700 !important;
+    color: #000 !important;
+  }
+
+  /* ── A4 page setup — margins give natural white border around content ── */
   @page {
     size: A4 portrait;
-    margin: 15mm 18mm;
+    /* top/bottom: 14mm, left/right: 20mm — matches classic CV look */
+    margin: 14mm 20mm;
   }
-}
+
+  /* Force page break BETWEEN major sections if needed */
+  .cv-section {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Prevent orphaned section headings — heading stays attached to first line
+     below it (safe, small elements). Do NOT force-break inside entries/bullets,
+     as that is what caused broken page splits on different devices/printers. */
+  .cv-section-heading,
+  .cv-rule {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Entries and bullets flow naturally, but avoid cutting off a lone line.
+     Combined with word/line wrapping this renders identically on any device. */
+  .cv-entry {
+    orphans: 3;
+    widows: 3;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .cv-bullets {
+    orphans: 3;
+    widows: 3;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .cv-bullets li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

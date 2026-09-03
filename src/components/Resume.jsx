@@ -1,5 +1,22 @@
 function printResume() {
-  window.print()
+  // Force desktop-width viewport so mobile/tablet prints like a laptop
+  const viewportMeta = document.querySelector('meta[name="viewport"]')
+  const originalContent = viewportMeta ? viewportMeta.content : 'width=device-width, initial-scale=1.0'
+
+  if (viewportMeta) {
+    viewportMeta.content = 'width=1200, initial-scale=1.0'
+  }
+
+  // Small delay to let the browser reflow at the new width before printing
+  setTimeout(() => {
+    window.print()
+    // Restore original viewport after print dialog opens
+    setTimeout(() => {
+      if (viewportMeta) {
+        viewportMeta.content = originalContent
+      }
+    }, 1500)
+  }, 300)
 }
 
 export default function Resume({ onBack }) {
@@ -268,6 +285,17 @@ export default function Resume({ onBack }) {
               <li>Implemented stored procedures, views, and triggers with a Laravel backend for consistent, streamlined data management.</li>
             </ul>
           </div>
+        </div>
+
+        {/* ══ ACHIEVEMENTS ══ */}
+        <div className="cv-section">
+          <h2 className="cv-section-heading">Achievements</h2>
+          <hr className="cv-rule" />
+          <ul className="cv-bullets">
+            <li><strong>2nd Runner-Up (3rd Place)</strong>, <strong>First Byte Datathon</strong> — placed 3rd overall in a data science / ML datathon competition.</li>
+            <li><strong>First Runner-Up</strong>, <strong>Sentiment Analysis Competition by MoonLab</strong> — ranked 1st runner-up in an NLP-based sentiment analysis contest.</li>
+            <li><strong>Codeforces</strong> — Max Rating 1185 &nbsp;·&nbsp; <strong>CodeChef</strong> — 2-Star.</li>
+          </ul>
         </div>
 
         {/* ══ CLUB & ACTIVITIES ══ */}
