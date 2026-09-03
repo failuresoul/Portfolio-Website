@@ -1,5 +1,12 @@
 const skillGroups = [
   {
+    icon: '🧠',
+    color: 'rgba(124, 58, 237, 0.15)',
+    title: 'AI, ML, NLP & LLMs',
+    desc: 'Deep Learning, NLP, VLMs & GenAI',
+    tags: ['NLP', 'LLMs', 'VLMs', 'Artificial Neural Networks', 'PyTorch / TensorFlow', 'HuggingFace', 'OpenCV']
+  },
+  {
     icon: '⚛️',
     color: 'rgba(6, 182, 212, 0.15)',
     title: 'Frontend',
@@ -56,8 +63,8 @@ export default function Skills() {
         </div>
 
         <div className="skills-grid">
-          {skillGroups.map(group => (
-            <div key={group.title} className="skill-card">
+          {skillGroups.map((group, i) => (
+            <div key={group.title} className={`skill-card reveal-scale delay-${(i % 3) + 1}`}>
               <div className="skill-card-header">
                 <div
                   className="skill-icon"

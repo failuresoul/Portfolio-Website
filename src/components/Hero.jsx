@@ -1,6 +1,47 @@
+import { useState, useEffect } from 'react'
 import profileImg from '../assets/profile.jpg'
 
+const roles = [
+  'AI/ML Researcher',
+  'NLP, LLM & VLM Explorer',
+  'Full-Stack Developer',
+  'Generative AI Builder',
+  'Competitive Programmer'
+]
+
 export default function Hero({ onViewResume }) {
+  // Dynamic typing effect for roles
+  const [roleIndex, setRoleIndex] = useState(0)
+  const [currentText, setCurrentText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [typingSpeed, setTypingSpeed] = useState(100)
+
+  useEffect(() => {
+    const targetRole = roles[roleIndex]
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        setCurrentText(targetRole.substring(0, currentText.length + 1))
+        setTypingSpeed(80)
+
+        if (currentText === targetRole) {
+          setTimeout(() => setIsDeleting(true), 1800)
+        }
+      } else {
+        setCurrentText(targetRole.substring(0, currentText.length - 1))
+        setTypingSpeed(40)
+
+        if (currentText === '') {
+          setIsDeleting(false)
+          setRoleIndex((prev) => (prev + 1) % roles.length)
+        }
+      }
+    }
+
+    const timer = setTimeout(handleTyping, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [currentText, isDeleting, roleIndex, typingSpeed])
+
   return (
     <section className="hero" id="home">
       <div className="grid-bg" />
@@ -10,26 +51,43 @@ export default function Hero({ onViewResume }) {
       <div className="container">
         <div className="hero-inner">
           {/* Left Content */}
-          <div>
+          <div className="hero-content-left">
             <div className="hero-badge">
               <span className="dot" />
-              Available for Opportunities & Research
+              Available for Research & Opportunities
             </div>
 
             <h1 className="hero-title">
-              Hi, I'm{' '}
-              <span className="gradient-text">Nurul Absar</span>
-              <br />
-              Shadik
+              <span className="hero-greeting">Hi, I'm</span>{' '}
+              <span className="hero-name-animated gradient-text">
+                Nurul Absar Shadik
+              </span>
             </h1>
+
+            {/* Dynamic Typewriter Role */}
+            <div className="hero-dynamic-role-box">
+              <span className="role-prefix">I am an </span>
+              <span className="role-typed-wrap">
+                <span className="role-typed-text">{currentText}</span>
+                <span className="typing-cursor">|</span>
+              </span>
+            </div>
 
             <div className="hero-headline">
               <strong>CSE Student at KUET · AI/ML Researcher · Full-Stack Developer</strong>
             </div>
 
             <p className="hero-subtitle">
-              Exploring <strong>Artificial Intelligence, Machine Learning, Generative AI, and Robotics</strong> while building intelligent, scalable, and impactful systems.
+              Exploring <strong>Artificial Intelligence, Machine Learning, NLP, LLMs, VLMs, Generative AI, and Robotics</strong> while building intelligent, scalable, and impactful systems.
             </p>
+
+            {/* AI Research Focus Chips */}
+            <div className="hero-focus-chips">
+              <span className="focus-chip">🤖 AI / ML</span>
+              <span className="focus-chip">💬 NLP & LLMs</span>
+              <span className="focus-chip">👁️ Vision-Language (VLMs)</span>
+              <span className="focus-chip">🌐 Full-Stack Dev</span>
+            </div>
 
             <div className="hero-actions">
               <a href="#projects" className="btn-primary">
@@ -56,7 +114,7 @@ export default function Hero({ onViewResume }) {
             </div>
           </div>
 
-          {/* Right - Profile Image */}
+          {/* Right - Profile Image with interactive floating badges */}
           <div className="hero-image-wrapper">
             <div className="hero-image-container">
               <div className="hero-image-glow" />
@@ -68,14 +126,29 @@ export default function Hero({ onViewResume }) {
                 className="hero-img"
               />
 
+              {/* Floating badges on both sides */}
               <div className="hero-floating-badge hero-floating-badge-1">
                 <span className="floating-icon">🧠</span>
-                AI/ML Researcher
+                <div>
+                  <div className="badge-title">AI/ML Researcher</div>
+                  <div className="badge-subtitle">NLP · LLM · VLM</div>
+                </div>
               </div>
 
               <div className="hero-floating-badge hero-floating-badge-2">
-                <span className="floating-icon">🤖</span>
-                AI / ML Enthusiast
+                <span className="floating-icon">💻</span>
+                <div>
+                  <div className="badge-title">Full-Stack Developer</div>
+                  <div className="badge-subtitle">React · Node · Laravel</div>
+                </div>
+              </div>
+
+              <div className="hero-floating-badge hero-floating-badge-3">
+                <span className="floating-icon">✨</span>
+                <div>
+                  <div className="badge-title">Generative AI</div>
+                  <div className="badge-subtitle">Deep Learning & Vision</div>
+                </div>
               </div>
             </div>
           </div>

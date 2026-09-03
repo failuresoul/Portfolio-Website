@@ -396,20 +396,96 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(38px, 5.2vw, 64px);
   font-weight: 900;
-  line-height: 1.05;
-  margin-bottom: 16px;
+  line-height: 1.15;
+  margin-bottom: 14px;
   animation: fadeInUp 0.6s ease 0.1s forwards;
   opacity: 0;
 }
 
-.hero-headline {
+.hero-greeting {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+/* Animated Name with flowing luminous gradient and glow */
+.hero-name-animated {
   display: inline-block;
-  font-size: clamp(16px, 2.2vw, 21px);
+  background: linear-gradient(120deg, #9333ea 0%, #38bdf8 45%, #ec4899 80%, #9333ea 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nameShine 5s linear infinite;
+  filter: drop-shadow(0 2px 14px rgba(147, 51, 234, 0.25));
+  position: relative;
+}
+
+@keyframes nameShine {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Dynamic Role Typewriter Box with elegant badge styling */
+.hero-dynamic-role-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+  min-height: 42px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.6s ease 0.18s forwards;
+  opacity: 0;
+  max-width: 100%;
+}
+
+.role-prefix {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.role-typed-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.role-typed-text {
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.8vw, 18px);
   font-weight: 700;
   color: var(--accent-secondary);
-  margin-bottom: 18px;
+  letter-spacing: 0.2px;
+}
+
+.typing-cursor {
+  color: var(--accent-tertiary);
+  font-weight: 900;
+  font-size: 17px;
+  animation: blinkCursor 0.9s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-headline {
+  display: inline-block;
+  font-size: clamp(15px, 1.9vw, 19px);
+  font-weight: 700;
+  color: var(--accent-secondary);
+  margin-bottom: 16px;
   line-height: 1.4;
   letter-spacing: -0.2px;
   background: linear-gradient(90deg, var(--accent-secondary), var(--accent-tertiary), var(--accent-secondary));
@@ -428,12 +504,12 @@ a {
 }
 
 .hero-subtitle {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--text-secondary);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   line-height: 1.7;
   max-width: 580px;
-  animation: fadeInUp 0.6s ease 0.3s forwards;
+  animation: fadeInUp 0.6s ease 0.25s forwards;
   opacity: 0;
 }
 
@@ -442,16 +518,17 @@ a {
   font-weight: 600;
 }
 
-.hero-tags {
+/* AI Focus Chips */
+.hero-focus-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 40px;
+  gap: 8px;
+  margin-bottom: 32px;
   animation: fadeInUp 0.6s ease 0.3s forwards;
   opacity: 0;
 }
 
-.hero-tag {
+.focus-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -461,14 +538,16 @@ a {
   border-radius: 50px;
   font-family: var(--font-mono);
   font-size: 12px;
+  font-weight: 500;
   color: var(--text-secondary);
+  transition: var(--transition);
 }
 
-.hero-tag .tag-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-secondary);
+.focus-chip:hover {
+  border-color: var(--accent-secondary);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15);
 }
 
 .hero-actions {
@@ -565,8 +644,8 @@ a {
 
 .hero-image-container {
   position: relative;
-  width: 380px;
-  height: 380px;
+  width: 360px;
+  height: 360px;
 }
 
 .hero-image-ring {
@@ -621,40 +700,80 @@ a {
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 10px;
+  padding: 10px 18px;
   background: var(--bg-card);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 16px;
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
-  box-shadow: var(--shadow-card);
-  z-index: 2;
-  transition: var(--transition);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease;
 }
 
 .hero-floating-badge:hover {
   border-color: var(--accent-secondary);
-  transform: scale(1.05);
+  transform: scale(1.06) !important;
+  box-shadow: 0 14px 34px rgba(124, 58, 237, 0.25);
 }
 
+.hero-floating-badge .badge-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.hero-floating-badge .badge-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+/* Badge 1: Top-Right (~20° from top) */
 .hero-floating-badge-1 {
-  top: 20px;
-  right: -30px;
-  animation: float 6s ease-in-out infinite;
+  top: 10px;
+  right: -50px;
+  animation: floatOrb1 6s ease-in-out infinite;
 }
 
+/* Badge 2: Mid-Left (~190° opposite side) */
 .hero-floating-badge-2 {
-  bottom: 40px;
-  left: -40px;
-  animation: float 8s ease-in-out infinite 2s;
+  top: 50%;
+  left: -70px;
+  transform: translateY(-50%);
+  animation: floatOrb2 7s ease-in-out infinite;
+}
+
+/* Badge 3: Bottom-Right (~320° bottom flank) */
+.hero-floating-badge-3 {
+  bottom: 8px;
+  right: -40px;
+  animation: floatOrb3 6.5s ease-in-out infinite 1.5s;
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 8px)); }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .floating-icon {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* Animations */
@@ -667,6 +786,73 @@ a {
   from { opacity: 0; transform: translateX(40px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Scroll Reveal Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay utility classes */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
 
 /* ============================
    ABOUT SECTION
@@ -1636,8 +1822,9 @@ a {
     height: 280px;
   }
 
-  .hero-floating-badge-1 { right: -10px; }
-  .hero-floating-badge-2 { left: -10px; }
+  .hero-floating-badge-1 { top: -10px; right: -10px; }
+  .hero-floating-badge-2 { top: auto; bottom: -10px; left: -15px; transform: none; }
+  .hero-floating-badge-3 { display: none; }
 
   .about-grid {
     grid-template-columns: 1fr;

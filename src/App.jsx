@@ -31,6 +31,32 @@ function App() {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
   }
 
+  // Scroll reveal animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed')
+          }
+        })
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    )
+
+    const revealElements = document.querySelectorAll(
+      '.reveal-on-scroll, .reveal-left, .reveal-right, .reveal-scale'
+    )
+    revealElements.forEach((el) => observer.observe(el))
+
+    return () => {
+      revealElements.forEach((el) => observer.unobserve(el))
+    }
+  }, [page])
+
   return (
     <>
       <Navbar

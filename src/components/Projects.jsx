@@ -1,5 +1,16 @@
 const projects = [
   {
+    name: 'Churn Prediction (ANN)',
+    emoji: '🧠',
+    description: 'Deep Learning customer churn prediction model built using Artificial Neural Networks (ANN). Features exploratory data analysis, data normalization, dropout regularization, and binary classification optimization on real banking data.',
+    tech: ['Python', 'TensorFlow', 'Keras', 'ANN', 'Pandas', 'Scikit-learn'],
+    techColors: ['#38bdf8', '#f59e0b', '#ef4444', '#a855f7', '#10b981', '#6366f1'],
+    stars: 1,
+    github: 'https://github.com/failuresoul/Churn-Prediction-by-using-ANN',
+    gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
+    featured: true
+  },
+  {
     name: 'JudgeMate',
     emoji: '⚖️',
     description: 'A self-hosted competitive programming judge platform built with Laravel 12. Supports C++, Python & Java submissions, async judging via queue workers, role-based access (Admin/ProblemSetter/Contestant), contests with live scoreboards, badge awards, and external contest sync from Codeforces, AtCoder & CodeChef.',
@@ -105,8 +116,8 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid">
-          {projects.map(project => (
-            <div key={project.name} className="project-card">
+          {projects.map((project, i) => (
+            <div key={project.name} className={`project-card reveal-on-scroll delay-${(i % 3) + 1}`}>
               <ProjectBanner project={project} />
 
               <div className="project-card-body">

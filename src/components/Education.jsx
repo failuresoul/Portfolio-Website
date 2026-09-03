@@ -61,7 +61,7 @@ export default function Education() {
 
         <div className="education-timeline">
           {educationData.map((edu, i) => (
-            <div key={i} className="education-item">
+            <div key={i} className={`education-item reveal-on-scroll delay-${i + 1}`}>
               {/* Timeline connector */}
               <div className="edu-connector">
                 <div className="edu-dot" style={{ background: edu.color, boxShadow: `0 0 16px ${edu.color}80` }}>

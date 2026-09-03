@@ -29,7 +29,7 @@ export default function About() {
       <div className="container">
         <div className="about-grid">
           {/* Image */}
-          <div className="about-img-container">
+          <div className="about-img-container reveal-left">
             <div className="about-img-accent" />
             <div className="about-img-inner">
               <img src={profileImg} alt="Nurul Absar Shadik" className="about-img" />
@@ -40,7 +40,7 @@ export default function About() {
           </div>
 
           {/* Content */}
-          <div className="about-content">
+          <div className="about-content reveal-right">
             <span className="section-tag">Who I Am</span>
             <h2 className="section-title">Turning Ideas Into <span className="gradient-text">Reality</span></h2>
 
@@ -57,8 +57,8 @@ export default function About() {
             </p>
 
             <div className="about-highlights">
-              {highlights.map(h => (
-                <div key={h.title} className="about-highlight">
+              {highlights.map((h, idx) => (
+                <div key={h.title} className={`about-highlight reveal-on-scroll delay-${idx + 1}`}>
                   <div className="about-highlight-icon">{h.icon}</div>
                   <div className="about-highlight-text">
                     <h4>{h.title}</h4>

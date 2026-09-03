@@ -53,7 +53,7 @@ export default function ClubActivities() {
           {clubActivities.map((activity, i) => {
             const catColor = categoryColors[activity.category]
             return (
-              <div key={i} className="club-card" style={{ '--club-color': activity.color }}>
+              <div key={i} className={`club-card reveal-on-scroll delay-${i + 1}`} style={{ '--club-color': activity.color }}>
                 {/* Top accent line */}
                 <div className="club-card-accent" style={{ background: `linear-gradient(90deg, ${activity.color}, transparent)` }} />
 
