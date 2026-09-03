@@ -51,7 +51,9 @@
 /* ============================
    RESET & BASE
 ============================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -72,9 +74,18 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 3px;
+}
 
 /* ============================
    NOISE OVERLAY
@@ -82,7 +93,10 @@ body {
 body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
@@ -92,7 +106,12 @@ body::before {
 /* ============================
    TYPOGRAPHY
 ============================= */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
@@ -357,8 +376,15 @@ a {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero-inner {
@@ -394,8 +420,17 @@ a {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.8); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
 }
 
 .hero-title {
@@ -447,6 +482,7 @@ a {
     transform: translateY(22px) scale(0.95);
     filter: blur(4px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -474,6 +510,7 @@ a {
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -485,6 +522,7 @@ a {
     transform: scaleX(0);
     opacity: 0;
   }
+
   to {
     transform: scaleX(1);
     opacity: 0.9;
@@ -492,17 +530,20 @@ a {
 }
 
 @keyframes pulseLine {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
     box-shadow: 0 0 8px var(--accent-primary);
   }
+
   50% {
     opacity: 1;
     box-shadow: 0 0 16px var(--accent-secondary);
   }
 }
 
-/* Dynamic Role Typewriter Box with elegant compact badge styling */
+/* Dynamic Role Typewriter Box with stable width to prevent content jumping */
 .hero-dynamic-role-box {
   display: inline-flex;
   align-items: center;
@@ -512,7 +553,9 @@ a {
   padding: 6px 16px;
   border-radius: 50px;
   margin-bottom: 12px;
-  min-height: 36px;
+  min-height: 38px;
+  min-width: 320px;
+  width: fit-content;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
   animation: fadeInUp 0.6s ease 0.18s forwards;
   opacity: 0;
@@ -524,12 +567,15 @@ a {
   font-size: 13px;
   color: var(--text-muted);
   font-weight: 500;
+  flex-shrink: 0;
 }
 
 .role-typed-wrap {
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  min-width: 210px;
+  white-space: nowrap;
 }
 
 .role-typed-text {
@@ -538,6 +584,7 @@ a {
   font-weight: 700;
   color: var(--accent-secondary);
   letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .typing-cursor {
@@ -549,8 +596,15 @@ a {
 }
 
 @keyframes blinkCursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-headline {
@@ -571,9 +625,17 @@ a {
 }
 
 @keyframes shimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero-subtitle {
@@ -728,7 +790,7 @@ a {
   border-radius: 50%;
   border: 2px solid transparent;
   background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
-              var(--gradient-hero) border-box;
+    var(--gradient-hero) border-box;
   animation: spin 8s linear infinite;
 }
 
@@ -741,8 +803,13 @@ a {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-img {
@@ -766,8 +833,17 @@ a {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .hero-floating-badge {
@@ -832,18 +908,39 @@ a {
 }
 
 @keyframes floatOrb1 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 @keyframes floatOrb2 {
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 6px)); }
+
+  0%,
+  100% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 6px));
+  }
 }
 
 @keyframes floatOrb3 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .floating-icon {
@@ -852,23 +949,51 @@ a {
 
 /* Animations */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes scaleUp {
-  from { opacity: 0; transform: scale(0.92); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Scroll Reveal Classes */
@@ -921,12 +1046,29 @@ a {
 }
 
 /* Stagger delay utility classes */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
+}
+
+.delay-6 {
+  transition-delay: 0.6s;
+}
 
 /* ============================
    ABOUT SECTION (Researcher & Developer Aesthetic)
@@ -1103,9 +1245,20 @@ a {
   transition: var(--transition);
 }
 
-.card-dots .card-dot:nth-child(1) { background: var(--accent-secondary); opacity: 0.7; }
-.card-dots .card-dot:nth-child(2) { background: var(--border-color); opacity: 0.8; }
-.card-dots .card-dot:nth-child(3) { background: var(--accent-primary); opacity: 0.7; }
+.card-dots .card-dot:nth-child(1) {
+  background: var(--accent-secondary);
+  opacity: 0.7;
+}
+
+.card-dots .card-dot:nth-child(2) {
+  background: var(--border-color);
+  opacity: 0.8;
+}
+
+.card-dots .card-dot:nth-child(3) {
+  background: var(--accent-primary);
+  opacity: 0.7;
+}
 
 .card-code-badge {
   font-family: var(--font-mono);
@@ -1756,7 +1909,8 @@ a {
   margin-bottom: 4px;
 }
 
-.contact-item-text p, .contact-item-text a {
+.contact-item-text p,
+.contact-item-text a {
   font-size: 15px;
   color: var(--text-primary);
   transition: var(--transition);
@@ -1979,7 +2133,7 @@ a {
 
 .cv-back-btn {
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #444;
   padding: 9px 20px;
   border-radius: 8px;
@@ -2016,7 +2170,7 @@ a {
   max-width: 860px;
   margin: 0 auto;
   background: #ffffff;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
   padding: 52px 64px 60px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 11pt;
@@ -2208,9 +2362,21 @@ a {
     height: 280px;
   }
 
-  .hero-floating-badge-1 { top: -10px; right: -10px; }
-  .hero-floating-badge-2 { top: auto; bottom: -10px; left: -15px; transform: none; }
-  .hero-floating-badge-3 { display: none; }
+  .hero-floating-badge-1 {
+    top: -10px;
+    right: -10px;
+  }
+
+  .hero-floating-badge-2 {
+    top: auto;
+    bottom: -10px;
+    left: -15px;
+    transform: none;
+  }
+
+  .hero-floating-badge-3 {
+    display: none;
+  }
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -2260,12 +2426,14 @@ a {
     backdrop-filter: blur(20px);
     padding: 24px;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     gap: 20px;
     z-index: 999;
   }
 
-  .section { padding: 64px 0; }
+  .section {
+    padding: 64px 0;
+  }
 
   .projects-grid {
     grid-template-columns: 1fr;
@@ -2298,9 +2466,19 @@ a {
 }
 
 @keyframes drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
 }
 
 /* ============================
@@ -2354,9 +2532,19 @@ a {
 
 /* Print styles for resume */
 @media print {
-  .no-print { display: none !important; }
-  body { background: white; color: black; }
-  .resume-container { box-shadow: none; border: none; }
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .resume-container {
+    box-shadow: none;
+    border: none;
+  }
 }
 
 /* ============================
@@ -2364,6 +2552,26 @@ a {
 ============================= */
 .education-section {
   background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.03) 50%, transparent);
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.education-header-top {
+  margin-bottom: 24px;
+}
+
+.education-section-big-title {
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.education-section-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-top: 6px;
 }
 
 .education-timeline {
@@ -2371,7 +2579,7 @@ a {
   flex-direction: column;
   gap: 0;
   position: relative;
-  margin-top: 48px;
+  margin-top: 30px;
 }
 
 .education-item {
@@ -2713,6 +2921,7 @@ a {
 }
 
 @media print {
+
   .no-print,
   .cv-action-bar {
     display: none !important;
@@ -2723,7 +2932,8 @@ a {
     print-color-adjust: exact;
   }
 
-  html, body {
+  html,
+  body {
     width: 210mm;
     background: white !important;
     margin: 0;

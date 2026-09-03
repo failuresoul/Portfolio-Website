@@ -4,7 +4,7 @@ import profileImg from '../assets/profile.jpg'
 const roles = [
   'AI/ML Researcher',
   'NLP, LLM & VLM Explorer',
-  'Niryo Robot & ROS Developer',
+  'Niryo Robot Explorer',
   'Full-Stack Developer',
   'Generative AI Builder',
   'Competitive Programmer'

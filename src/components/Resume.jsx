@@ -60,17 +60,18 @@ export default function Resume({ onBack }) {
             </div>
             <div className="cv-entry-row">
               <em className="cv-entry-sub">Higher Secondary Certificate (HSC) — Science Group</em>
-              <em className="cv-entry-sub cv-right">Sylhet, Bangladesh</em>
+              <em className="cv-entry-sub cv-right">GPA 5.00 / 5.00 · Sylhet</em>
             </div>
           </div>
 
           <div className="cv-entry">
             <div className="cv-entry-row">
               <strong className="cv-entry-org">Rukeya Khatun Lyceum School</strong>
-              <span className="cv-entry-date">Up to 2020</span>
+              <span className="cv-entry-date">2018 – 2020</span>
             </div>
             <div className="cv-entry-row">
               <em className="cv-entry-sub">Secondary School Certificate (SSC) — Science Group</em>
+              <em className="cv-entry-sub cv-right">GPA 5.00 / 5.00 (General Scholarship) · Barlekha, Moulvibazar</em>
             </div>
           </div>
         </div>

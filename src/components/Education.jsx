@@ -5,15 +5,9 @@ const educationData = [
     degree: 'B.Sc. in Computer Science & Engineering',
     institution: 'Khulna University of Engineering & Technology (KUET)',
     location: 'Khulna, Bangladesh',
-    period: '2022 – Present',
+    period: '2023 – Present',
     grade: 'Ongoing · Batch 22',
-    color: '#7c3aed',
-    highlights: [
-      'Department of Computer Science & Engineering — Batch 22 (Session 2022–2023)',
-      'Active in competitive programming, AI/ML research & club activities',
-      'Member of KMinds (AI Society) as Assistant General Secretary',
-      'Working on Deep Learning, NLP, Full-Stack & Robotics projects'
-    ]
+    color: '#7c3aed'
   },
   {
     level: 'College (HSC)',
@@ -22,28 +16,18 @@ const educationData = [
     institution: 'Jalalabad Cantonment Public School and College',
     location: 'Sylhet, Bangladesh',
     period: '2020 – 2022',
-    grade: 'Science Group',
-    color: '#06b6d4',
-    highlights: [
-      'Science Group with Mathematics',
-      'Developed strong foundation in Physics & Mathematics',
-      'Participated in inter-school academic competitions'
-    ]
+    grade: 'GPA 5.00 / 5.00 · Science Group',
+    color: '#06b6d4'
   },
   {
     level: 'School (SSC)',
     icon: '📚',
     degree: 'Secondary School Certificate (SSC)',
     institution: 'Rukeya Khatun Lyceum School',
-    location: 'Bangladesh',
-    period: 'Up to 2020',
-    grade: 'Science Group',
-    color: '#f59e0b',
-    highlights: [
-      'Science Group with Mathematics',
-      'Strong academic performance throughout schooling',
-      'Foundation built in logical and analytical thinking'
-    ]
+    location: 'Barlekha, Moulvibazar',
+    period: '2018 – 2020',
+    grade: 'GPA 5.00 / 5.00 · General Scholarship',
+    color: '#f59e0b'
   }
 ]
 
@@ -51,13 +35,11 @@ export default function Education() {
   return (
     <section className="section education-section" id="education">
       <div className="container">
-        <span className="section-tag">Academic Journey</span>
-        <h2 className="section-title">
-          Education & <span className="gradient-text">Background</span>
-        </h2>
-        <p className="section-subtitle">
-          From school foundations to university innovation — a path driven by curiosity.
-        </p>
+        {/* Top Prominent Section Header (matching About Me section) */}
+        <div className="education-header-top reveal-on-scroll">
+          <h2 className="education-section-big-title">Education</h2>
+          <p className="education-section-sub">Academic journey &amp; scholastic milestones</p>
+        </div>
 
         <div className="education-timeline">
           {educationData.map((edu, i) => (
@@ -92,12 +74,6 @@ export default function Education() {
                     {edu.grade}
                   </span>
                 </div>
-
-                <ul className="edu-highlights">
-                  {edu.highlights.map((h, j) => (
-                    <li key={j}>{h}</li>
-                  ))}
-                </ul>
               </div>
             </div>
           ))}
