@@ -25,21 +25,43 @@ export default function Resume({ onBack }) {
           <h1 className="cv-name">Nurul Absar Shadik</h1>
           <div className="cv-contacts">
             <span>
-              <a href="https://linkedin.com/in/nurul-absar-shadik-01143b373" target="_blank" rel="noopener noreferrer">
-                in linkedin/nurul-absar-shadik
-              </a>
+              <a href="mailto:nurulabsarshadik65@gmail.com">nurulabsarshadik65@gmail.com</a>
             </span>
             <span>
-              <a href="https://github.com/failuresoul" target="_blank" rel="noopener noreferrer">
-                ⌥ github.com/failuresoul
-              </a>
+              <a href="tel:+8801746109666">+880 1746-109666</a>
             </span>
-            <span>
-              <a href="https://www.kaggle.com/nurulabsarshadik" target="_blank" rel="noopener noreferrer">
-                📊 kaggle/nurulabsarshadik
-              </a>
-            </span>
-            <span>📍 Khulna, Bangladesh</span>
+            <span>Lalon Shah Hall, KUET, Khulna, Bangladesh</span>
+          </div>
+        </div>
+
+        {/* ══ SUMMARY ══ */}
+        <div className="cv-section">
+          <h2 className="cv-section-heading">Summary</h2>
+          <hr className="cv-rule" />
+          <p className="cv-skill-line">
+            Computer Science undergraduate at Khulna University of Engineering &amp; Technology with a strong foundation in
+            full-stack web development, machine learning, and competitive programming. Proven ability to design and ship
+            end-to-end systems, from a fully self-hosted competitive programming judge to real-time academic management
+            platforms and production-grade deep learning models. Recognized for translating complex problems into clean,
+            efficient, and maintainable software solutions.
+          </p>
+        </div>
+
+        {/* ══ PROFILES ══ */}
+        <div className="cv-section">
+          <h2 className="cv-section-heading">Profiles</h2>
+          <hr className="cv-rule" />
+          <div className="cv-skills-block">
+            <p className="cv-skill-line">
+              <strong>GitHub:</strong> <a href="https://github.com/failuresoul" target="_blank" rel="noopener noreferrer">github.com/failuresoul</a>
+              &emsp;<strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nurul-absar-shadik-01143b373/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nurul-absar-shadik</a>
+              &emsp;<strong>Kaggle:</strong> <a href="https://www.kaggle.com/nurulabsarshadik" target="_blank" rel="noopener noreferrer">kaggle.com/nurulabsarshadik</a>
+            </p>
+            <p className="cv-skill-line">
+              <strong>Codeforces:</strong> <a href="https://codeforces.com/profile/failure_soul" target="_blank" rel="noopener noreferrer">codeforces.com/profile/failure_soul</a>
+              &emsp;<strong>CodeChef:</strong> <a href="https://www.codechef.com/users/failure_soul" target="_blank" rel="noopener noreferrer">codechef.com/users/failure_soul</a>
+              &emsp;<strong>LeetCode:</strong> <a href="https://leetcode.com/u/ajolbelai_absar/" target="_blank" rel="noopener noreferrer">leetcode.com/u/ajolbelai_absar</a>
+            </p>
           </div>
         </div>
 
@@ -51,22 +73,22 @@ export default function Resume({ onBack }) {
           <div className="cv-entry">
             <div className="cv-entry-row">
               <strong className="cv-entry-org">Khulna University of Engineering &amp; Technology (KUET)</strong>
-              <span className="cv-entry-date">October 2022 – Present</span>
+              <span className="cv-entry-date">Oct 2023 – Expected 2027</span>
             </div>
             <div className="cv-entry-row">
-              <em className="cv-entry-sub">B.Sc. in Computer Science &amp; Engineering — Batch 22</em>
-              <em className="cv-entry-sub cv-right">(Ongoing)</em>
+              <em className="cv-entry-sub">B.Sc. in Computer Science &amp; Engineering</em>
+              <em className="cv-entry-sub cv-right">CGPA 3.64 / 4.00</em>
             </div>
           </div>
 
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <strong className="cv-entry-org">Jalalabad Cantonment Public School and College</strong>
+              <strong className="cv-entry-org">Jalalabad Cantonment Public School &amp; College</strong>
               <span className="cv-entry-date">2020 – 2022</span>
             </div>
             <div className="cv-entry-row">
               <em className="cv-entry-sub">Higher Secondary Certificate (HSC) — Science Group</em>
-              <em className="cv-entry-sub cv-right">GPA 5.00 / 5.00 · Sylhet</em>
+              <em className="cv-entry-sub cv-right">GPA 5.00 / 5.00</em>
             </div>
           </div>
 
@@ -77,8 +99,34 @@ export default function Resume({ onBack }) {
             </div>
             <div className="cv-entry-row">
               <em className="cv-entry-sub">Secondary School Certificate (SSC) — Science Group</em>
-              <em className="cv-entry-sub cv-right">GPA 5.00 / 5.00 (General Scholarship) · Barlekha, Moulvibazar</em>
+              <em className="cv-entry-sub cv-right">GPA 5.00 / 5.00 · General Scholarship</em>
             </div>
+          </div>
+        </div>
+
+        {/* ══ TECHNICAL SKILLS ══ */}
+        <div className="cv-section">
+          <h2 className="cv-section-heading">Technical Skills</h2>
+          <hr className="cv-rule" />
+          <div className="cv-skills-block">
+            <p className="cv-skill-line">
+              <strong>Languages:</strong> C++, Python, JavaScript (ES6+), PHP, SQL, HTML, CSS
+            </p>
+            <p className="cv-skill-line">
+              <strong>Frameworks &amp; Libraries:</strong> React.js, Node.js, Express.js, Laravel, Socket.io, Vite
+            </p>
+            <p className="cv-skill-line">
+              <strong>Machine Learning:</strong> TensorFlow, Keras, Scikit-learn, Pandas, NumPy, Matplotlib
+            </p>
+            <p className="cv-skill-line">
+              <strong>Databases:</strong> MySQL, PostgreSQL, Eloquent ORM
+            </p>
+            <p className="cv-skill-line">
+              <strong>Tools &amp; Platforms:</strong> Git, GitHub, Linux, Docker, VS Code, Kaggle, npm, Composer
+            </p>
+            <p className="cv-skill-line">
+              <strong>Concepts:</strong> Data Structures &amp; Algorithms, OOP, REST APIs, JWT Auth, Queue Workers, CI/CD
+            </p>
           </div>
         </div>
 
@@ -90,208 +138,180 @@ export default function Resume({ onBack }) {
           {/* JudgeMate */}
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">JudgeMate</strong>
-                <span className="cv-proj-tech"> | Laravel 12, PHP, MySQL, Queue Workers, REST API</span>
-              </span>
+              <strong className="cv-entry-proj">JudgeMate — Competitive Programming Judge</strong>
               <span className="cv-entry-date">
-                <a href="https://github.com/failuresoul/JudgeMate" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>⭐ 1 star</a>
+                <a href="https://github.com/failuresoul/JudgeMate" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
               </span>
             </div>
+            <p className="cv-proj-tech">Laravel 12, PHP, MySQL, Queue Workers, REST API</p>
             <ul className="cv-bullets">
-              <li>Built a self-hosted competitive programming judge supporting <strong>C++, Python, and Java</strong> submissions evaluated asynchronously via queue workers with isolated sandboxing.</li>
-              <li>Implemented role-based access control (Admin / ProblemSetter / Contestant) with full contest management and live real-time scoreboards.</li>
-              <li>Integrated external APIs to automatically sync contests from <strong>Codeforces</strong>, <strong>AtCoder</strong>, and <strong>CodeChef</strong>; developed badge award system for achievements.</li>
+              <li>Engineered a self-hosted online judge supporting C++, Python, and Java, with asynchronous code evaluation across isolated, sandboxed queue workers.</li>
+              <li>Designed role-based access control (Admin / Problem Setter / Contestant) with real-time scoreboards and automated contest syncing from Codeforces, AtCoder, and CodeChef.</li>
+            </ul>
+          </div>
+
+          {/* FitConnectPro */}
+          <div className="cv-entry">
+            <div className="cv-entry-row">
+              <strong className="cv-entry-proj">FitConnectPro — Fitness &amp; Health Android App</strong>
+              <span className="cv-entry-date">
+                <a href="https://github.com/failuresoul" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
+              </span>
+            </div>
+            <p className="cv-proj-tech">Java, Android Studio, Firebase</p>
+            <ul className="cv-bullets">
+              <li>Developed a fitness and health tracking Android application built with Java in Android Studio, using Firebase as the real-time backend database.</li>
+              <li>Implemented workout logging, user profiles, and health metric tracking with Firebase Authentication and Cloud Firestore for secure, synchronized data.</li>
             </ul>
           </div>
 
           {/* CampusHive */}
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">CampusHive</strong>
-                <span className="cv-proj-tech"> | React, Node.js, Express.js, Socket.io, MySQL, JWT</span>
-              </span>
-            </div>
-            <ul className="cv-bullets">
-              <li>Architected a full-stack academic management platform with three role-based portals (Admin, Teacher, Student) with <strong>JWT</strong> authentication and real-time features using <strong>Socket.io</strong>.</li>
-              <li>Built LabTrack system for lab report submission and grading; integrated real-time live quiz engine and lecture file uploads.</li>
-            </ul>
-          </div>
-
-          {/* Churn Prediction ANN */}
-          <div className="cv-entry">
-            <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">Churn Prediction using ANN</strong>
-                <span className="cv-proj-tech"> | Python, TensorFlow/Keras, Jupyter Notebook, Pandas, Scikit-learn</span>
-              </span>
+              <strong className="cv-entry-proj">CampusHive — Academic Management Platform</strong>
               <span className="cv-entry-date">
-                <a href="https://github.com/failuresoul/Churn-Prediction-by-using-ANN" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>⭐ 1 star</a>
+                <a href="https://github.com/failuresoul/CampusHive" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
               </span>
             </div>
+            <p className="cv-proj-tech">React, Node.js, Express.js, Socket.io, MySQL, JWT</p>
             <ul className="cv-bullets">
-              <li>Built an <strong>Artificial Neural Network (ANN)</strong> model from scratch to predict customer churn, applied to real-world tabular banking dataset with data preprocessing pipelines.</li>
-              <li>Explored deep learning classification with feature engineering, normalization, dropout regularization, and binary cross-entropy optimization achieving strong validation accuracy.</li>
-              <li>Documented as a comprehensive ML learning project covering the full pipeline: EDA → model training → evaluation → prediction.</li>
+              <li>Architected a full-stack academic management platform with three role-based portals (Admin, Teacher, Student), secured with JWT and powered by real-time Socket.io communication.</li>
+              <li>Built LabTrack for lab report grading, a live in-class quiz engine, study circles, and a lost-and-found portal.</li>
             </ul>
           </div>
 
-          {/* Fitness Tracker */}
+          {/* Churn Prediction */}
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">Fitness Tracker App</strong>
-                <span className="cv-proj-tech"> | Python, Machine Learning, Data Analysis</span>
-              </span>
-            </div>
-            <ul className="cv-bullets">
-              <li>Developed a fitness tracking application with ML-powered activity recognition and personalized workout/diet recommendations based on user metrics.</li>
-              <li>Implemented calorie estimation, exercise logging, and progress visualization using data analytics and predictive modeling.</li>
-            </ul>
-          </div>
-
-          {/* Tiny Computer / CPU */}
-          <div className="cv-entry">
-            <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">Tiny Computer (CPU Design)</strong>
-                <span className="cv-proj-tech"> | Digital Logic, ALU, Booth's Algorithm, Computer Architecture</span>
-              </span>
+              <strong className="cv-entry-proj">Customer Churn Prediction Using ANN</strong>
               <span className="cv-entry-date">
-                <a href="https://github.com/failuresoul/Tiny_Computer" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
+                <a href="https://github.com/failuresoul/Churn-Prediction-by-using-ANN" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
               </span>
             </div>
+            <p className="cv-proj-tech">Python, TensorFlow, Keras, Scikit-learn, Pandas</p>
             <ul className="cv-bullets">
-              <li>Designed and implemented a miniature computer from first principles using <strong>NOT, AND, OR gates</strong> — 2nd Year 1st Semester project at KUET.</li>
-              <li>Built a complete <strong>ALU (Arithmetic Logic Unit)</strong> with support for Booth's multiplication algorithm and basic arithmetic operations.</li>
-            </ul>
-          </div>
-
-          {/* Roll Counter */}
-          <div className="cv-entry">
-            <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">Roll Counter &amp; Attendance System</strong>
-                <span className="cv-proj-tech"> | Python / C++, Algorithm Design</span>
-              </span>
-            </div>
-            <ul className="cv-bullets">
-              <li>Built an automated roll/attendance counter system with efficient data structures for managing student records and roll assignments.</li>
-              <li>Implemented sorting, search, and report generation features for academic record management.</li>
+              <li>Built an artificial neural network to predict customer churn on a real-world banking dataset, reaching strong validation accuracy through dropout regularization and feature engineering.</li>
+              <li>Documented the complete ML lifecycle — exploratory data analysis, training, evaluation, and prediction — as a modular, reproducible pipeline.</li>
             </ul>
           </div>
 
           {/* Niryo Robot */}
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">Niryo Robotic Arm Control System</strong>
-                <span className="cv-proj-tech"> | Python, pyniryo SDK, ROS, OpenCV</span>
-              </span>
+              <strong className="cv-entry-proj">Niryo Robotic Arm Control System</strong>
               <span className="cv-entry-date">
-                <a href="https://github.com/failuresoul/Niryo-Robot" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>⭐ 1 star</a>
+                <a href="https://github.com/failuresoul/Niryo-Robot" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
               </span>
             </div>
+            <p className="cv-proj-tech">Python, pyniryo SDK, ROS, OpenCV</p>
             <ul className="cv-bullets">
-              <li>Developed Python-based control software for the <strong>Niryo One/Ned</strong> robotic arm using pyniryo SDK with ROS integration for precision motor control.</li>
-              <li>Implemented <strong>OpenCV</strong>-based object detection for camera-assisted robotic manipulation tasks with contour tracking.</li>
+              <li>Developed control software for the Niryo robotic arm using the pyniryo SDK with ROS integration, achieving reliable precision motor control and task automation.</li>
+              <li>Integrated OpenCV-based object detection for camera-assisted manipulation with real-time contour tracking and pick-and-place workflows.</li>
+            </ul>
+          </div>
+
+          {/* Tiny Computer */}
+          <div className="cv-entry">
+            <div className="cv-entry-row">
+              <strong className="cv-entry-proj">Tiny Computer (CPU Design)</strong>
+              <span className="cv-entry-date">
+                <a href="https://github.com/failuresoul/Tiny_Computer" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
+              </span>
+            </div>
+            <p className="cv-proj-tech">Digital Logic, ALU, Booth's Algorithm, Computer Architecture</p>
+            <ul className="cv-bullets">
+              <li>Designed and implemented a miniature computer from first principles using NOT, AND, and OR logic gates.</li>
+              <li>Built a complete Arithmetic Logic Unit (ALU) with support for Booth's multiplication algorithm and basic arithmetic operations.</li>
+            </ul>
+          </div>
+
+          {/* Sylhet Association */}
+          <div className="cv-entry">
+            <div className="cv-entry-row">
+              <strong className="cv-entry-proj">Sylhet Association of KUET — Community Portal</strong>
+              <span className="cv-entry-date">
+                <a href="https://github.com/failuresoul" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
+              </span>
+            </div>
+            <p className="cv-proj-tech">Web Development, JavaScript, Database, Community Portal</p>
+            <ul className="cv-bullets">
+              <li>Built an official community platform for the Sylhet Association of KUET, facilitating student connection, a regional member directory, and event announcements.</li>
+              <li>Enabled collaborative student welfare initiatives through a structured management portal.</li>
+            </ul>
+          </div>
+
+          {/* Portfolio Website */}
+          <div className="cv-entry">
+            <div className="cv-entry-row">
+              <strong className="cv-entry-proj">Personal Portfolio Website</strong>
+              <span className="cv-entry-date">
+                <a href="https://github.com/failuresoul/Portfolio-Website" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
+              </span>
+            </div>
+            <p className="cv-proj-tech">React, Vite, JavaScript, CSS3, Canvas API</p>
+            <ul className="cv-bullets">
+              <li>Developed a high-performance personal portfolio with an interactive constellation star map of skills, a light/dark theme engine, and smooth scroll transitions.</li>
             </ul>
           </div>
 
           {/* GarmentGuard */}
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <span>
-                <strong className="cv-entry-proj">GarmentGuard DB</strong>
-                <span className="cv-proj-tech"> | MySQL, PHP, Laravel, SQL Stored Procedures</span>
+              <strong className="cv-entry-proj">GarmentGuard DB — Industry Database System</strong>
+              <span className="cv-entry-date">
+                <a href="https://github.com/failuresoul/GarmentGuard_DB" target="_blank" rel="noopener noreferrer" style={{fontSize:'9pt', color:'#555'}}>GitHub</a>
               </span>
             </div>
+            <p className="cv-proj-tech">PHP, Laravel, MySQL, SQL Stored Procedures</p>
             <ul className="cv-bullets">
-              <li>Designed a normalized relational database for garment industry management covering inventory, production tracking, and quality control workflows.</li>
-              <li>Implemented stored procedures, views, triggers, and a <strong>PHP/Laravel</strong> backend for streamlined data management.</li>
+              <li>Designed a normalized relational database for garment industry management, covering inventory, production tracking, and quality control workflows.</li>
+              <li>Implemented stored procedures, views, and triggers with a Laravel backend for consistent, streamlined data management.</li>
             </ul>
           </div>
         </div>
 
-        {/* ══ CLUB ACTIVITIES ══ */}
+        {/* ══ CLUB & ACTIVITIES ══ */}
         <div className="cv-section">
-          <h2 className="cv-section-heading">Club Activities</h2>
+          <h2 className="cv-section-heading">Club &amp; Activities</h2>
           <hr className="cv-rule" />
 
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <strong className="cv-entry-org">KMinds — KUET Mind &amp; Intelligence Society</strong>
-              <span className="cv-entry-date">2023 – Present</span>
+              <strong className="cv-entry-org">KMiNDs — KUET Machine Intelligence &amp; Data Science Community</strong>
+              <span className="cv-entry-date">2026 – Present</span>
             </div>
             <div className="cv-entry-row">
-              <em className="cv-entry-sub">Assistant General Secretary</em>
-              <em className="cv-entry-sub cv-right">Khulna, Bangladesh</em>
+              <em className="cv-entry-sub">Assistant General Secretary · Organizing Committee</em>
             </div>
             <ul className="cv-bullets">
-              <li>Coordinating AI/ML workshops, seminars, and knowledge-sharing sessions as part of KUET's premier intelligence society.</li>
+              <li>Driving workshops, AI study circles, competitive machine learning sessions, and data science community initiatives.</li>
             </ul>
           </div>
 
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <strong className="cv-entry-org">Hack Batch — KUET CSE Batch 22</strong>
-              <span className="cv-entry-date">2022 – Present</span>
+              <strong className="cv-entry-org">HACK — Hardware Acceleration Club of KUET</strong>
+              <span className="cv-entry-date">2026 – Present</span>
             </div>
             <div className="cv-entry-row">
-              <em className="cv-entry-sub">Batch Representative</em>
-              <em className="cv-entry-sub cv-right">Khulna, Bangladesh</em>
+              <em className="cv-entry-sub">Batch Representative (2K22) · Organizing Committee</em>
             </div>
             <ul className="cv-bullets">
-              <li>Elected representative coordinating hackathons, team building events, and departmental communications for CSE Batch 22.</li>
+              <li>Coordinating embedded hardware events, robotics acceleration, and Arduino/microcontroller sessions with technical collaboration.</li>
             </ul>
           </div>
 
           <div className="cv-entry">
             <div className="cv-entry-row">
-              <strong className="cv-entry-org">SGIPC — KUET Inter-University Programming Contest</strong>
-              <span className="cv-entry-date">2023 – Present</span>
+              <strong className="cv-entry-org">SGIPC — Special Group Interested in Programming Contest</strong>
+              <span className="cv-entry-date">2026 – Present</span>
             </div>
             <div className="cv-entry-row">
-              <em className="cv-entry-sub">Assistant Contest Manager</em>
-              <em className="cv-entry-sub cv-right">Khulna, Bangladesh</em>
+              <em className="cv-entry-sub">Assistant Contest Manager · Organizing Committee</em>
             </div>
             <ul className="cv-bullets">
-              <li>Assisting in organizing university-level programming contests including problem vetting, judge system coordination, and contestant management.</li>
+              <li>Coordinating judge systems, contest logistics, test case verification, live scoreboards, and contestant support.</li>
             </ul>
-          </div>
-        </div>
-
-        {/* ══ TECHNICAL SKILLS ══ */}
-        <div className="cv-section">
-          <h2 className="cv-section-heading">Technical Skills</h2>
-          <hr className="cv-rule" />
-
-          <div className="cv-skills-block">
-            <p className="cv-skill-line">
-              <strong>Languages:</strong> C++17, Python 3, JavaScript (ES6+), PHP, SQL, HTML/CSS
-            </p>
-            <p className="cv-skill-line">
-              <strong>AI / Machine Learning:</strong> TensorFlow, Keras, Scikit-learn, Pandas, NumPy, Matplotlib, Jupyter Notebook
-            </p>
-            <p className="cv-skill-line">
-              <strong>Frontend:</strong> React.js, Vite, Socket.io, CSS3
-            </p>
-            <p className="cv-skill-line">
-              <strong>Backend:</strong> Node.js, Express.js, Laravel 12, REST APIs, Queue Workers
-            </p>
-            <p className="cv-skill-line">
-              <strong>Databases:</strong> MySQL, PostgreSQL, Eloquent ORM
-            </p>
-            <p className="cv-skill-line">
-              <strong>Robotics &amp; CV:</strong> pyniryo SDK, ROS, OpenCV, Python Automation
-            </p>
-            <p className="cv-skill-line">
-              <strong>Tools:</strong> Git, GitHub, Linux, Composer, npm, VS Code, Kaggle
-            </p>
-            <p className="cv-skill-line">
-              <strong>Competitive Programming:</strong> Codeforces, AtCoder, CodeChef, LeetCode — DP, Graph Theory, Binary Search, Segment Tree
-            </p>
           </div>
         </div>
 
@@ -300,7 +320,16 @@ export default function Resume({ onBack }) {
           <h2 className="cv-section-heading">Languages</h2>
           <hr className="cv-rule" />
           <div className="cv-skills-block">
-            <p className="cv-skill-line"><strong>Bengali</strong> — Native &nbsp;|&nbsp; <strong>English</strong> — Professional Working Proficiency</p>
+            <p className="cv-skill-line"><strong>Bengali</strong> — Native &nbsp;|&nbsp; <strong>English</strong> — Professional Working Proficiency &nbsp;|&nbsp; <strong>Hindi</strong> — Conversational</p>
+          </div>
+        </div>
+
+        {/* ══ HOBBIES ══ */}
+        <div className="cv-section">
+          <h2 className="cv-section-heading">Hobbies &amp; Interests</h2>
+          <hr className="cv-rule" />
+          <div className="cv-skills-block">
+            <p className="cv-skill-line">Badminton, Playing Football, Watching Football, FIFA / Video Games</p>
           </div>
         </div>
 
