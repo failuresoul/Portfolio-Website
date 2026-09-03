@@ -248,9 +248,51 @@ export default function Resume({ onBack }) {
                 <h2 className="resume-section-title">Education</h2>
 
                 <div className="sidebar-edu-item">
-                  <p className="sidebar-edu-degree">B.Sc. in Computer Science & Engineering</p>
-                  <p className="sidebar-edu-school">University (Bangladesh)</p>
-                  <p className="sidebar-edu-year">Ongoing</p>
+                  <div className="sidebar-edu-badge" style={{ background: 'rgba(124,58,237,0.2)', color: '#a855f7' }}>University</div>
+                  <p className="sidebar-edu-degree">B.Sc. in Computer Science &amp; Engineering</p>
+                  <p className="sidebar-edu-school">Khulna University of Engineering &amp; Technology (KUET)</p>
+                  <p className="sidebar-edu-year">2022 – Present · Batch 22 · Ongoing</p>
+                </div>
+
+                <div className="sidebar-edu-item">
+                  <div className="sidebar-edu-badge" style={{ background: 'rgba(6,182,212,0.2)', color: '#06b6d4' }}>College (HSC)</div>
+                  <p className="sidebar-edu-degree">Higher Secondary Certificate (HSC)</p>
+                  <p className="sidebar-edu-school">Notre Dame College, Dhaka</p>
+                  <p className="sidebar-edu-year">2019 – 2021 · Science Group</p>
+                </div>
+
+                <div className="sidebar-edu-item">
+                  <div className="sidebar-edu-badge" style={{ background: 'rgba(245,158,11,0.2)', color: '#f59e0b' }}>School (SSC)</div>
+                  <p className="sidebar-edu-degree">Secondary School Certificate (SSC)</p>
+                  <p className="sidebar-edu-school">Govt. Laboratory High School, Dhaka</p>
+                  <p className="sidebar-edu-year">Up to 2019 · Science Group</p>
+                </div>
+              </div>
+
+              {/* Club Activities */}
+              <div className="resume-mb">
+                <h2 className="resume-section-title">Club Activities</h2>
+
+                <div className="sidebar-achievement">
+                  <span className="sidebar-achievement-icon">🧠</span>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: '12px', color: '#a855f7' }}>Assistant General Secretary</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>KMinds — KUET AI &amp; Intelligence Society</div>
+                  </div>
+                </div>
+                <div className="sidebar-achievement">
+                  <span className="sidebar-achievement-icon">🚀</span>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: '12px', color: '#06b6d4' }}>Batch Representative</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>Hack Batch — KUET CSE Batch 22</div>
+                  </div>
+                </div>
+                <div className="sidebar-achievement">
+                  <span className="sidebar-achievement-icon">⚖️</span>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: '12px', color: '#f59e0b' }}>Assistant Contest Manager</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>SGIPC — KUET Programming Contest</div>
+                  </div>
                 </div>
               </div>
 

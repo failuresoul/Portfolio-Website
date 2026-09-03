@@ -5,6 +5,8 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
+import Education from './components/Education'
+import ClubActivities from './components/ClubActivities'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Resume from './components/Resume'
@@ -26,9 +28,11 @@ function App() {
         <>
           <Hero onViewResume={() => setPage('resume')} />
           <About />
+          <Education />
           <Skills />
           <Projects />
           <Experience />
+          <ClubActivities />
           <Contact />
           <Footer onViewResume={() => setPage('resume')} />
         </>

@@ -1788,3 +1788,348 @@ a {
   body { background: white; color: black; }
   .resume-container { box-shadow: none; border: none; }
 }
+
+/* ============================
+   EDUCATION SECTION
+============================= */
+.education-section {
+  background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.03) 50%, transparent);
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  margin-top: 48px;
+}
+
+.education-item {
+  display: flex;
+  gap: 24px;
+  position: relative;
+}
+
+.edu-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.edu-dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.edu-dot-icon {
+  font-size: 22px;
+}
+
+.education-item:hover .edu-dot {
+  transform: scale(1.12);
+}
+
+.edu-line {
+  width: 3px;
+  flex: 1;
+  min-height: 32px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, rgba(124, 58, 237, 0.5), rgba(6, 182, 212, 0.5));
+}
+
+.education-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  background: var(--gradient-card);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.education-item:hover .education-card {
+  border-color: rgba(124, 58, 237, 0.4);
+  transform: translateX(6px);
+  box-shadow: -4px 0 24px rgba(124, 58, 237, 0.15), var(--shadow-card);
+}
+
+.education-item:hover .education-card::before {
+  opacity: 1;
+}
+
+.education-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.edu-level-badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.edu-degree {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+}
+
+.edu-institution {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.edu-location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.edu-grade-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.edu-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edu-highlights li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+}
+
+.edu-highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-size: 12px;
+}
+
+/* ============================
+   CLUB ACTIVITIES SECTION
+============================= */
+.club-section {
+  background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.03) 50%, transparent);
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.club-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--gradient-card);
+}
+
+.club-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.club-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15), var(--shadow-card);
+}
+
+.club-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.club-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.club-icon {
+  font-size: 24px;
+}
+
+.club-category-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.club-period {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.club-role {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  line-height: 1.3;
+}
+
+.club-org {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.club-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.club-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.club-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  transition: var(--transition);
+}
+
+.club-card:hover .club-tag {
+  opacity: 0.9;
+}
+
+/* Resume sidebar edu badge */
+.sidebar-edu-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .edu-connector {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+
+  .edu-line {
+    width: 100%;
+    height: 3px;
+    min-height: unset;
+    margin: 0 4px;
+  }
+
+  .edu-dot {
+    width: 44px;
+    height: 44px;
+  }
+
+  .education-card {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .club-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
