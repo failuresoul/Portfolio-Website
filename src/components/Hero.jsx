@@ -4,6 +4,7 @@ import profileImg from '../assets/profile.jpg'
 const roles = [
   'AI/ML Researcher',
   'NLP, LLM & VLM Explorer',
+  'Niryo Robot & ROS Developer',
   'Full-Stack Developer',
   'Generative AI Builder',
   'Competitive Programmer'
@@ -34,6 +35,7 @@ export default function Hero({ onViewResume }) {
         if (currentText === '') {
           setIsDeleting(false)
           setRoleIndex((prev) => (prev + 1) % roles.length)
+          setTypingSpeed(300)
         }
       }
     }
@@ -43,8 +45,8 @@ export default function Hero({ onViewResume }) {
   }, [currentText, isDeleting, roleIndex, typingSpeed])
 
   return (
-    <section className="hero" id="home">
-      <div className="grid-bg" />
+    <section className="hero" id="hero">
+      {/* Subtle Background Glow Orbs */}
       <div className="hero-orb-1" />
       <div className="hero-orb-2" />
 
@@ -58,9 +60,15 @@ export default function Hero({ onViewResume }) {
             </div>
 
             <h1 className="hero-title">
-              <span className="hero-greeting">Hi, I'm</span>{' '}
-              <span className="hero-name-animated gradient-text">
-                Nurul Absar Shadik
+              <span className="hero-greeting">Hi, I'm</span><br />
+              <span className="hero-name-animated">
+                <span className="name-line-1">
+                  <span className="name-word" style={{ animationDelay: '0.15s' }}>Nurul</span>{' '}
+                  <span className="name-word" style={{ animationDelay: '0.28s' }}>Absar</span>
+                </span>
+                <span className="name-line-2">
+                  <span className="name-word" style={{ animationDelay: '0.42s' }}>Shadik</span>
+                </span>
               </span>
             </h1>
 
@@ -78,14 +86,15 @@ export default function Hero({ onViewResume }) {
             </div>
 
             <p className="hero-subtitle">
-              Exploring <strong>Artificial Intelligence, Machine Learning, NLP, LLMs, VLMs, Generative AI, and Robotics</strong> while building intelligent, scalable, and impactful systems.
+              Exploring <strong>Artificial Intelligence, Machine Learning, NLP, LLMs, VLMs, Generative AI, and Niryo Robotics</strong> while building intelligent, scalable, and impactful systems.
             </p>
 
             {/* AI Research Focus Chips */}
             <div className="hero-focus-chips">
               <span className="focus-chip">🤖 AI / ML</span>
               <span className="focus-chip">💬 NLP & LLMs</span>
-              <span className="focus-chip">👁️ Vision-Language (VLMs)</span>
+              <span className="focus-chip">👁️ VLMs</span>
+              <span className="focus-chip">🦾 Niryo Robot</span>
               <span className="focus-chip">🌐 Full-Stack Dev</span>
             </div>
 
@@ -144,10 +153,10 @@ export default function Hero({ onViewResume }) {
               </div>
 
               <div className="hero-floating-badge hero-floating-badge-3">
-                <span className="floating-icon">✨</span>
+                <span className="floating-icon">🦾</span>
                 <div>
-                  <div className="badge-title">Generative AI</div>
-                  <div className="badge-subtitle">Deep Learning & Vision</div>
+                  <div className="badge-title">Niryo Robot & ROS</div>
+                  <div className="badge-subtitle">6-Axis Arm · Vision</div>
                 </div>
               </div>
             </div>
