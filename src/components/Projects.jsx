@@ -1,24 +1,22 @@
 const projects = [
   {
-    name: 'Churn Prediction (ANN)',
-    emoji: '🧠',
-    description: 'Deep Learning customer churn prediction model built using Artificial Neural Networks (ANN). Features exploratory data analysis, data normalization, dropout regularization, and binary classification optimization on real banking data.',
-    tech: ['Python', 'TensorFlow', 'Keras', 'ANN', 'Pandas', 'Scikit-learn'],
-    techColors: ['#38bdf8', '#f59e0b', '#ef4444', '#a855f7', '#10b981', '#6366f1'],
-    stars: 1,
-    github: 'https://github.com/failuresoul/Churn-Prediction-by-using-ANN',
-    gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
-    featured: true
-  },
-  {
     name: 'JudgeMate',
     emoji: '⚖️',
     description: 'A self-hosted competitive programming judge platform built with Laravel 12. Supports C++, Python & Java submissions, async judging via queue workers, role-based access (Admin/ProblemSetter/Contestant), contests with live scoreboards, badge awards, and external contest sync from Codeforces, AtCoder & CodeChef.',
     tech: ['Laravel 12', 'PHP', 'MySQL', 'Queue', 'Blade', 'REST API'],
-    techColors: ['#ff6b6b', '#8c78f0', '#00c9a7', '#feca57', '#54a0ff', '#ff9f43'],
     stars: 1,
     github: 'https://github.com/failuresoul/JudgeMate',
     gradient: 'linear-gradient(135deg, #1a0a3e 0%, #2d1b6e 100%)',
+    featured: true
+  },
+  {
+    name: 'FitConnectPro',
+    emoji: '💪',
+    description: 'Full-stack fitness & health tracking platform with ML-driven activity recognition and personalized workout recommendations. Features real-time metric tracking, calorie expenditure calculations, and progress analytics.',
+    tech: ['Python', 'React', 'Machine Learning', 'Data Analytics', 'REST API'],
+    stars: 1,
+    github: 'https://github.com/failuresoul',
+    gradient: 'linear-gradient(135deg, #0a2e1e 0%, #1e3a5f 100%)',
     featured: true
   },
   {
@@ -26,21 +24,9 @@ const projects = [
     emoji: '🏫',
     description: 'A full-stack academic management web platform built with React + Node.js + Socket.io. Features three role-based portals (Admin, Teacher, Student), lecture file uploads, a lab report grading system (LabTrack), real-time live quizzes, study circles, and a Lost & Found portal.',
     tech: ['React', 'Node.js', 'Socket.io', 'MySQL', 'Express'],
-    techColors: ['#61dafb', '#68a063', '#010101', '#00c9a7', '#f0db4f'],
     stars: 0,
     github: 'https://github.com/failuresoul/CampusHive',
     gradient: 'linear-gradient(135deg, #0a2a1e 0%, #0a1a2e 100%)',
-    featured: true
-  },
-  {
-    name: 'Niryo Robot',
-    emoji: '🤖',
-    description: 'Python-based control system for the Niryo One/Ned robotic arm. Implements automated pick-and-place sequences, precision movement control via pyniryo SDK, and real-time feedback. Developed as part of a robotics engineering project.',
-    tech: ['Python', 'pyniryo', 'ROS', 'OpenCV', 'Automation'],
-    techColors: ['#3572A5', '#ff6b35', '#22314e', '#ff6b6b', '#54a0ff'],
-    stars: 1,
-    github: 'https://github.com/failuresoul/Niryo-Robot',
-    gradient: 'linear-gradient(135deg, #0a1a3e 0%, #1a0a2e 100%)',
     featured: true
   },
   {
@@ -48,22 +34,60 @@ const projects = [
     emoji: '👔',
     description: 'A comprehensive database management system for garment industry operations. Built with PHP/Laravel for managing inventory, production tracking, quality control records, and supply chain data.',
     tech: ['PHP', 'Laravel', 'MySQL', 'SQL'],
-    techColors: ['#8892bf', '#ff2d20', '#00c9a7', '#f29111'],
     stars: 0,
     github: 'https://github.com/failuresoul/GarmentGuard_DB',
     gradient: 'linear-gradient(135deg, #1a1a0a 0%, #2e1a0a 100%)',
-    featured: false
+    featured: true
   },
   {
-    name: 'Problem Solving',
-    emoji: '🧠',
-    description: 'A curated collection of competitive programming solutions in C++. Covers algorithms like Dynamic Programming, Graph Theory, Binary Search, Segment Trees, and more from platforms like Codeforces, AtCoder, and CodeChef.',
-    tech: ['C++17', 'STL', 'Algorithms', 'Data Structures'],
-    techColors: ['#00599c', '#f34b7d', '#54a0ff', '#feca57'],
+    name: 'Portfolio Website',
+    emoji: '🌐',
+    description: 'Modern, high-performance personal portfolio built with React and Vite. Features an interactive 28-node dynamic constellation star map of skills, light/dark dual theme engine, smooth scroll transitions, and clean responsive layouts.',
+    tech: ['React', 'Vite', 'JavaScript', 'CSS3', 'Canvas API'],
     stars: 0,
-    github: 'https://github.com/failuresoul/Problem-Solving',
-    gradient: 'linear-gradient(135deg, #1a0a0a 0%, #2e0a0a 100%)',
-    featured: false
+    github: 'https://github.com/failuresoul/Portfolio-Website',
+    gradient: 'linear-gradient(135deg, #1e1035 0%, #0d1b3e 100%)',
+    featured: true
+  },
+  {
+    name: 'Sylhet Association of KUET',
+    emoji: '🤝',
+    description: 'Official community platform and management portal for the Sylhet Association of KUET. Facilitates student community connection, regional member directory, event announcements, and collaborative student welfare initiatives.',
+    tech: ['Web Development', 'JavaScript', 'Database', 'Community Portal'],
+    stars: 0,
+    github: 'https://github.com/failuresoul',
+    gradient: 'linear-gradient(135deg, #0a251a 0%, #14352a 100%)',
+    featured: true
+  },
+  {
+    name: 'Tiny Computer (CPU Design)',
+    emoji: '💻',
+    description: 'A miniature computer designed and implemented from first principles using NOT, AND, and OR logic gates. Features a complete Arithmetic Logic Unit (ALU), Booth\'s multiplication algorithm implementation, and digital computer architecture.',
+    tech: ['Digital Logic', 'ALU', 'Booth Algorithm', 'Computer Architecture'],
+    stars: 0,
+    github: 'https://github.com/failuresoul/Tiny_Computer',
+    gradient: 'linear-gradient(135deg, #1f1a10 0%, #3a2e15 100%)',
+    featured: true
+  },
+  {
+    name: 'Churn Prediction (ANN)',
+    emoji: '🧠',
+    description: 'Deep Learning customer churn prediction model built using Artificial Neural Networks (ANN). Features exploratory data analysis, data normalization, dropout regularization, and binary classification optimization on real banking data.',
+    tech: ['Python', 'TensorFlow', 'Keras', 'ANN', 'Pandas', 'Scikit-learn'],
+    stars: 1,
+    github: 'https://github.com/failuresoul/Churn-Prediction-by-using-ANN',
+    gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
+    featured: true
+  },
+  {
+    name: 'Niryo Robot',
+    emoji: '🤖',
+    description: 'Python-based control system for the Niryo One/Ned robotic arm. Implements automated pick-and-place sequences, precision movement control via pyniryo SDK, and real-time feedback. Developed as part of a robotics engineering project.',
+    tech: ['Python', 'pyniryo', 'ROS', 'OpenCV', 'Automation'],
+    stars: 1,
+    github: 'https://github.com/failuresoul/Niryo-Robot',
+    gradient: 'linear-gradient(135deg, #0a1a3e 0%, #1a0a2e 100%)',
+    featured: true
   }
 ]
 
@@ -105,13 +129,13 @@ function ProjectBanner({ project }) {
 
 export default function Projects() {
   return (
-    <section className="section" id="projects">
+    <section className="section projects-section" id="projects">
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 0' }}>
-          <span className="section-tag">My Work</span>
-          <h2 className="section-title">Featured Projects</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Real-world applications ranging from competitive programming judges to robotics control systems.
+        {/* Section Header matching About Me, Education & Skills */}
+        <div className="projects-header-top reveal-on-scroll">
+          <h2 className="projects-section-big-title">Featured Projects</h2>
+          <p className="projects-section-sub">
+            Real-world applications ranging from competitive programming judges to robotics control systems
           </p>
         </div>
 
@@ -128,16 +152,8 @@ export default function Projects() {
                 <p className="project-desc">{project.description}</p>
 
                 <div className="project-tech-stack">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={tech}
-                      className="project-tech"
-                      style={{
-                        color: project.techColors[i] || 'var(--text-secondary)',
-                        background: `${project.techColors[i]}15`,
-                        border: `1px solid ${project.techColors[i]}30`
-                      }}
-                    >
+                  {project.tech.map((tech) => (
+                    <span key={tech} className="project-tech">
                       {tech}
                     </span>
                   ))}
@@ -150,7 +166,10 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="project-link project-link-primary"
                   >
-                    🐙 GitHub
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }}>
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
                   </a>
                 </div>
               </div>

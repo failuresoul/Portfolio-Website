@@ -1679,11 +1679,34 @@ a {
 /* ============================
    PROJECTS SECTION
 ============================= */
+.projects-section {
+  padding-top: 60px;
+  padding-bottom: 75px;
+}
+
+.projects-header-top {
+  margin-bottom: 36px;
+}
+
+.projects-section-big-title {
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.projects-section-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 28px;
-  margin-top: 60px;
+  margin-top: 36px;
 }
 
 .project-card {
@@ -1748,23 +1771,37 @@ a {
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   flex: 1;
 }
 
 .project-tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
 .project-tech {
-  padding: 4px 10px;
+  padding: 3px 9px;
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+[data-theme="light"] .project-tech {
+  background: #f1f5f9;
+  border-color: rgba(15, 23, 42, 0.12);
+  color: #334155;
+}
+
+.project-card:hover .project-tech {
+  border-color: rgba(124, 58, 237, 0.35);
 }
 
 .project-links {
@@ -1773,39 +1810,48 @@ a {
   margin-top: auto;
 }
 
+/* Sleek black box wrapper for GitHub button in both light and dark mode */
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
+  gap: 8px;
+  padding: 8px 18px;
   border-radius: 8px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
   cursor: pointer;
   text-decoration: none;
 }
 
 .project-link-primary {
-  background: rgba(124, 58, 237, 0.15);
-  border: 1px solid rgba(124, 58, 237, 0.3);
-  color: var(--accent-secondary);
+  background: #090a0f;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  color: #f8fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .project-link-primary:hover {
-  background: rgba(124, 58, 237, 0.3);
+  background: #000000;
   border-color: var(--accent-secondary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(124, 58, 237, 0.3);
 }
 
-.project-link-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-secondary);
+[data-theme="light"] .project-link-primary {
+  background: #111420;
+  border-color: #1e2433;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.16);
 }
 
-.project-link-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-primary);
+[data-theme="light"] .project-link-primary:hover {
+  background: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
 }
 
 /* ============================
