@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export default function Navbar({ onNavigate, currentPage }) {
+export default function Navbar({ onNavigate, currentPage, theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -41,7 +41,7 @@ export default function Navbar({ onNavigate, currentPage }) {
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'Space Grotesk, sans-serif', fontSize: '22px', fontWeight: 700 }}
             onClick={() => onNavigate('home')}
           >
-            &lt;Nayeem /&gt;
+            &lt;Shadik /&gt;
           </button>
 
           <ul className={`navbar-links ${mobileOpen ? 'mobile-open' : ''}`}>
@@ -55,6 +55,15 @@ export default function Navbar({ onNavigate, currentPage }) {
           </ul>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+            >
+              <span className="theme-toggle-icon">{theme === 'light' ? '🌙' : '☀️'}</span>
+              <span className="theme-toggle-label">{theme === 'light' ? 'Dark' : 'Light'}</span>
+            </button>
             <button className="navbar-cta" onClick={() => onNavigate('resume')}>
               Resume ↗
             </button>

@@ -3,10 +3,10 @@ export default function Footer({ onViewResume }) {
     <footer className="footer">
       <div className="container">
         <div className="footer-inner">
-          <span className="footer-logo">&lt;Nayeem /&gt;</span>
+          <span className="footer-logo">&lt;Shadik /&gt;</span>
 
           <p className="footer-text">
-            © 2026 Md. Nayeem Islam · Built with React + Vite ⚡
+            © 2026 Nurul Absar Shadik · Built with React + Vite ⚡
           </p>
 
           <div className="footer-links">

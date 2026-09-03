@@ -8,8 +8,8 @@ const highlights = [
   },
   {
     icon: '🤖',
-    title: 'Robotics Enthusiast',
-    desc: 'Niryo robot arm control with Python & ROS'
+    title: 'AI/ML Researcher',
+    desc: 'ANN, Deep Learning, NLP & Generative AI'
   },
   {
     icon: '💻',
@@ -18,7 +18,7 @@ const highlights = [
   },
   {
     icon: '🎓',
-    title: 'CS Student',
+    title: 'CS Student at KUET',
     desc: 'Passionate about algorithms & system design'
   }
 ]
@@ -32,7 +32,7 @@ export default function About() {
           <div className="about-img-container">
             <div className="about-img-accent" />
             <div className="about-img-inner">
-              <img src={profileImg} alt="Md. Nayeem Islam" className="about-img" />
+              <img src={profileImg} alt="Nurul Absar Shadik" className="about-img" />
               <div className="about-img-overlay" />
               <div className="about-img-border" />
             </div>
@@ -45,15 +45,15 @@ export default function About() {
             <h2 className="section-title">Turning Ideas Into <span className="gradient-text">Reality</span></h2>
 
             <p className="about-description">
-              I'm <strong style={{ color: 'var(--text-primary)' }}>Md. Nayeem Islam</strong>, a passionate Computer Science student 
-              and developer with a love for building things that matter. I thrive at the intersection of 
-              competitive programming, full-stack development, and robotics.
+              I'm <strong style={{ color: 'var(--text-primary)' }}>Nurul Absar Shadik</strong>, a 3rd-year CSE student at KUET
+              and developer passionate about AI research and building things that matter. I thrive at the intersection of 
+              machine learning, full-stack development, and competitive programming.
             </p>
 
             <p className="about-description">
-              Whether it's architecting a scalable web platform, controlling a robot arm with Python, 
-              or optimizing algorithms for a competitive programming judge — I bring curiosity and 
-              dedication to everything I do.
+              Whether it's training neural networks for churn prediction, architecting a scalable web platform, 
+              controlling a robot arm with Python, or crafting efficient algorithms for competitive programming — 
+              I bring curiosity and dedication to everything I do.
             </p>
 
             <div className="about-highlights">

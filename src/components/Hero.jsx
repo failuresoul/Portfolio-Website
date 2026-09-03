@@ -13,29 +13,23 @@ export default function Hero({ onViewResume }) {
           <div>
             <div className="hero-badge">
               <span className="dot" />
-              Available for Opportunities
+              Available for Opportunities & Research
             </div>
 
             <h1 className="hero-title">
               Hi, I'm{' '}
-              <span className="gradient-text">Md. Nayeem</span>
+              <span className="gradient-text">Nurul Absar</span>
               <br />
-              Islam
+              Shadik
             </h1>
 
-            <p className="hero-subtitle">
-              Full-Stack Developer & Competitive Programmer passionate about
-              building scalable systems, solving hard problems, and exploring robotics.
-            </p>
-
-            <div className="hero-tags">
-              {['React', 'Laravel', 'Node.js', 'C++', 'Python', 'Socket.io'].map(tag => (
-                <span key={tag} className="hero-tag">
-                  <span className="tag-dot" />
-                  {tag}
-                </span>
-              ))}
+            <div className="hero-headline">
+              <strong>CSE Student at KUET · AI/ML Researcher · Full-Stack Developer</strong>
             </div>
+
+            <p className="hero-subtitle">
+              Exploring <strong>Artificial Intelligence, Machine Learning, Generative AI, and Robotics</strong> while building intelligent, scalable, and impactful systems.
+            </p>
 
             <div className="hero-actions">
               <a href="#projects" className="btn-primary">
@@ -48,16 +42,16 @@ export default function Hero({ onViewResume }) {
 
             <div className="hero-stats">
               <div className="hero-stat">
-                <div className="hero-stat-num">5+</div>
+                <div className="hero-stat-num">400+</div>
+                <div className="hero-stat-label">Problems Solved</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-num">20+</div>
                 <div className="hero-stat-label">Projects</div>
               </div>
               <div className="hero-stat">
-                <div className="hero-stat-num">3+</div>
+                <div className="hero-stat-num">8+</div>
                 <div className="hero-stat-label">Languages</div>
-              </div>
-              <div className="hero-stat">
-                <div className="hero-stat-num">∞</div>
-                <div className="hero-stat-label">Problems Solved</div>
               </div>
             </div>
           </div>
@@ -70,18 +64,18 @@ export default function Hero({ onViewResume }) {
               <div className="hero-image-ring-2" />
               <img
                 src={profileImg}
-                alt="Md. Nayeem Islam - Full Stack Developer"
+                alt="Nurul Absar Shadik - AI/ML Researcher & Full Stack Developer"
                 className="hero-img"
               />
 
               <div className="hero-floating-badge hero-floating-badge-1">
-                <span className="floating-icon">⚡</span>
-                Full-Stack Dev
+                <span className="floating-icon">🧠</span>
+                AI/ML Researcher
               </div>
 
               <div className="hero-floating-badge hero-floating-badge-2">
                 <span className="floating-icon">🤖</span>
-                Robotics & AI
+                AI / ML Enthusiast
               </div>
             </div>
           </div>

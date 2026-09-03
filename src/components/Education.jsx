@@ -6,43 +6,43 @@ const educationData = [
     institution: 'Khulna University of Engineering & Technology (KUET)',
     location: 'Khulna, Bangladesh',
     period: '2022 – Present',
-    grade: 'Ongoing',
+    grade: 'Ongoing · Batch 22',
     color: '#7c3aed',
     highlights: [
-      'Department of Computer Science & Engineering',
-      'Batch 22 (Session 2022–2023)',
-      'Active in competitive programming & club activities',
-      'Working on AI/ML and full-stack development projects'
+      'Department of Computer Science & Engineering — Batch 22 (Session 2022–2023)',
+      'Active in competitive programming, AI/ML research & club activities',
+      'Member of KMinds (AI Society) as Assistant General Secretary',
+      'Working on Deep Learning, NLP, Full-Stack & Robotics projects'
     ]
   },
   {
     level: 'College (HSC)',
     icon: '🏫',
     degree: 'Higher Secondary Certificate (HSC)',
-    institution: 'Notre Dame College',
-    location: 'Dhaka, Bangladesh',
-    period: '2019 – 2021',
+    institution: 'Jalalabad Cantonment Public School and College',
+    location: 'Sylhet, Bangladesh',
+    period: '2020 – 2022',
     grade: 'Science Group',
     color: '#06b6d4',
     highlights: [
       'Science Group with Mathematics',
       'Developed strong foundation in Physics & Mathematics',
-      'Participated in academic competitions'
+      'Participated in inter-school academic competitions'
     ]
   },
   {
     level: 'School (SSC)',
     icon: '📚',
     degree: 'Secondary School Certificate (SSC)',
-    institution: 'Govt. Laboratory High School',
-    location: 'Dhaka, Bangladesh',
-    period: 'Up to 2019',
+    institution: 'Rukeya Khatun Lyceum School',
+    location: 'Bangladesh',
+    period: 'Up to 2020',
     grade: 'Science Group',
     color: '#f59e0b',
     highlights: [
       'Science Group with Mathematics',
-      'Class valedictorian participant',
-      'Strong academic performance'
+      'Strong academic performance throughout schooling',
+      'Foundation built in logical and analytical thinking'
     ]
   }
 ]
