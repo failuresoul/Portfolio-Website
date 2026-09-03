@@ -1,3 +1,6 @@
+import { SiKaggle, SiCodeforces, SiCodechef, SiLeetcode } from 'react-icons/si'
+import atcoderLogo from '../assets/atcoder_logo.png'
+
 const researchFocusList = [
   {
     num: '01',
@@ -86,7 +89,6 @@ export default function About() {
                   <span className="card-dot" />
                   <span className="card-dot" />
                 </div>
-                <div className="card-code-badge">AI / ML Research</div>
               </div>
 
               <div className="card-name-block">
@@ -103,30 +105,76 @@ export default function About() {
               <div className="card-divider-line" />
 
               <div className="card-domains-list">
-                <div className="domain-item">
-                  <span className="domain-bullet">▹</span>
-                  <span className="domain-label">Natural Language Processing (NLP)</span>
-                </div>
-                <div className="domain-item">
-                  <span className="domain-bullet">▹</span>
-                  <span className="domain-label">Large Language Models (LLMs)</span>
-                </div>
-                <div className="domain-item">
-                  <span className="domain-bullet">▹</span>
-                  <span className="domain-label">Vision-Language Models (VLMs)</span>
-                </div>
-                <div className="domain-item">
-                  <span className="domain-bullet">▹</span>
-                  <span className="domain-label">Niryo Robotics &amp; ROS</span>
-                </div>
-                <div className="domain-item">
-                  <span className="domain-bullet">▹</span>
-                  <span className="domain-label">Full-Stack Development</span>
-                </div>
-                <div className="domain-item">
-                  <span className="domain-bullet">▹</span>
-                  <span className="domain-label">Competitive Programming (400+)</span>
-                </div>
+                <a
+                  href="https://atcoder.jp/users/failure_soul"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="domain-item domain-link-item"
+                >
+                  <span className="domain-item-left">
+                    <img
+                      src={atcoderLogo}
+                      alt="AtCoder"
+                      className="domain-brand-icon atcoder-brand-logo"
+                      style={{
+                        width: '20px',
+                        height: '20px',
+                        objectFit: 'contain',
+                        borderRadius: '3px',
+                        background: '#ffffff',
+                        padding: '1px'
+                      }}
+                    />
+                    <span className="domain-label">AtCoder</span>
+                  </span>
+                  <span className="domain-link-arrow">↗</span>
+                </a>
+                <a
+                  href="https://codeforces.com/profile/failure_soul"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="domain-item domain-link-item"
+                >
+                  <span className="domain-item-left">
+                    {/* Official Codeforces 3-Color Vertical Bars Logo */}
+                    <svg
+                      className="domain-brand-icon"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ width: '18px', height: '18px' }}
+                    >
+                      <rect x="1.5" y="9" width="5" height="13.5" rx="1.5" fill="#ffd21f" />
+                      <rect x="9.5" y="3" width="5" height="19.5" rx="1.5" fill="#2188ff" />
+                      <rect x="17.5" y="6" width="5" height="16.5" rx="1.5" fill="#f44336" />
+                    </svg>
+                    <span className="domain-label">Codeforces</span>
+                  </span>
+                  <span className="domain-link-arrow">↗</span>
+                </a>
+                <a
+                  href="https://www.codechef.com/users/failure_soul"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="domain-item domain-link-item"
+                >
+                  <span className="domain-item-left">
+                    <SiCodechef className="domain-brand-icon" style={{ color: '#5b4638' }} />
+                    <span className="domain-label">CodeChef</span>
+                  </span>
+                  <span className="domain-link-arrow">↗</span>
+                </a>
+                <a
+                  href="https://leetcode.com/u/ajolbelai_absar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="domain-item domain-link-item"
+                >
+                  <span className="domain-item-left">
+                    <SiLeetcode className="domain-brand-icon" style={{ color: '#ffa116' }} />
+                    <span className="domain-label">LeetCode</span>
+                  </span>
+                  <span className="domain-link-arrow">↗</span>
+                </a>
               </div>
 
               <div className="card-divider-line" />

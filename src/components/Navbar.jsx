@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const navLinks = [
+  { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Education', href: '#education' },
   { label: 'Skills', href: '#skills' },
@@ -36,11 +37,17 @@ export default function Navbar({ onNavigate, currentPage, theme, toggleTheme }) 
       <div className="container">
         <div className="navbar-inner">
           <button
-            className="navbar-logo"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'Space Grotesk, sans-serif', fontSize: '22px', fontWeight: 700 }}
+            className="navbar-brand-badge"
             onClick={() => onNavigate('home')}
+            aria-label="Home"
           >
-            &lt;Shadik /&gt;
+            <div className="brand-logo-icon">
+              <span className="brand-icon-letter">S</span>
+              <span className="brand-pulse-dot" />
+            </div>
+            <span className="brand-name-text">
+              Shadik<span className="brand-dot">.</span>
+            </span>
           </button>
 
           <ul className={`navbar-links ${mobileOpen ? 'mobile-open' : ''}`}>
