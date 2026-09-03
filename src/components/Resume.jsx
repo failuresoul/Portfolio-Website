@@ -5,10 +5,16 @@ function printResume() {
 export default function Resume({ onBack }) {
   return (
     <div className="cv-page">
-      {/* ── Action Bar (no-print) ── */}
+      {/* ── Sticky Action Bar (no-print) ── */}
       <div className="cv-action-bar no-print">
-        <button className="cv-back-btn" onClick={onBack}>← Back to Portfolio</button>
-        <button className="cv-print-btn" onClick={printResume}>⬇ Download / Print PDF</button>
+        <button className="cv-back-btn" onClick={onBack}>
+          ← Back to Portfolio
+        </button>
+        <div className="cv-action-right">
+          <button className="cv-print-btn" onClick={printResume}>
+            ⬇ Download PDF
+          </button>
+        </div>
       </div>
 
       {/* ── CV Paper (A4, multi-page aware) ── */}

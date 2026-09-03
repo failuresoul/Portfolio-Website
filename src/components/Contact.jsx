@@ -1,59 +1,155 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import {
+  FaEnvelope,
+  FaWhatsapp,
+  FaGithub,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaInstagram,
+  FaLocationDot
+} from 'react-icons/fa6'
 
 const contactItems = [
   {
-    icon: '🐙',
-    label: 'GitHub',
-    value: 'github.com/failuresoul',
-    href: 'https://github.com/failuresoul'
-  },
-  {
-    icon: '📧',
+    icon: FaEnvelope,
     label: 'Email',
-    value: 'failuresoul@example.com',
-    href: 'mailto:failuresoul@example.com'
+    value: 'nurulabsarshadik65@gmail.com',
+    href: 'mailto:nurulabsarshadik65@gmail.com',
+    color: '#ea4335'
   },
   {
-    icon: '📍',
+    icon: FaWhatsapp,
+    label: 'WhatsApp',
+    value: '+880 1746-109666',
+    href: 'https://wa.me/8801746109666',
+    color: '#25d366'
+  },
+  {
+    icon: FaLinkedinIn,
+    label: 'LinkedIn',
+    value: 'Nurul Absar Shadik',
+    href: 'https://www.linkedin.com/in/nurul-absar-shadik-01143b373/',
+    color: '#0a66c2'
+  },
+  {
+    icon: FaGithub,
+    label: 'GitHub',
+    value: 'failuresoul',
+    href: 'https://github.com/failuresoul',
+    color: '#8b949e'
+  },
+  {
+    icon: FaLocationDot,
     label: 'Location',
-    value: 'Bangladesh',
-    href: null
+    value: 'KUET, Khulna, Bangladesh',
+    href: null,
+    color: '#06b6d4'
   }
 ]
 
 const socialLinks = [
-  { icon: '🐙', href: 'https://github.com/failuresoul', label: 'GitHub' },
+  {
+    icon: FaFacebookF,
+    href: 'https://www.facebook.com/nurulabsar.shadik/',
+    label: 'Facebook',
+    color: '#1877f2'
+  },
+  {
+    icon: FaInstagram,
+    href: 'https://www.instagram.com/shadik_65/',
+    label: 'Instagram',
+    color: '#e4405f'
+  },
+  {
+    icon: FaLinkedinIn,
+    href: 'https://www.linkedin.com/in/nurul-absar-shadik-01143b373/',
+    label: 'LinkedIn',
+    color: '#0a66c2'
+  },
+  {
+    icon: FaGithub,
+    href: 'https://github.com/failuresoul',
+    label: 'GitHub',
+    color: '#ffffff'
+  },
+  {
+    icon: FaWhatsapp,
+    href: 'https://wa.me/8801746109666',
+    label: 'WhatsApp',
+    color: '#25d366'
+  },
+  {
+    icon: FaEnvelope,
+    href: 'mailto:nurulabsarshadik65@gmail.com',
+    label: 'Email',
+    color: '#ea4335'
+  }
 ]
+
+
+// ─────────────────────────────────────────────────────────────
+//  EmailJS Setup (https://www.emailjs.com)
+//  1. Create a FREE account at emailjs.com
+//  2. Add a Gmail service → copy the Service ID below
+//  3. Create an Email Template with variables:
+//       {{from_name}}  {{from_email}}  {{message}}
+//     Set "To Email" to nurulabsarshadik65@gmail.com
+//  4. Copy your Template ID and Public Key below
+// ─────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID'   // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'  // e.g. 'template_xyz456'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'   // e.g. 'aBcDeFgHiJkLmNoP'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
-    setForm({ name: '', email: '', message: '' })
+    setStatus('sending')
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          to_email: 'nurulabsarshadik65@gmail.com'
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      setStatus('sent')
+      setForm({ name: '', email: '', message: '' })
+      setTimeout(() => setStatus('idle'), 4000)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 4000)
+    }
   }
 
   return (
-    <section className="section" id="contact">
+    <section className="section contact-section" id="contact">
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-          <span className="section-tag">Get In Touch</span>
-          <h2 className="section-title">Let's <span className="gradient-text">Connect</span></h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Open to internships, collaborations, and exciting projects. Let's build something amazing together!
+        <div className="contact-header-top reveal-on-scroll">
+          <h2 className="contact-section-big-title">Get In Touch</h2>
+          <p className="contact-section-sub">
+            Open to internships, AI/ML research, software collaborations, and competitive programming initiatives. Feel free to reach out directly!
           </p>
         </div>
 
         <div className="contact-grid">
           {/* Left - Info */}
-          <div>
+          <div className="contact-info-col">
             <div className="contact-info">
               {contactItems.map(item => (
                 <div key={item.label} className="contact-item">
-                  <div className="contact-icon">{item.icon}</div>
+                  <div className="contact-icon" style={{ borderColor: `${item.color}40`, color: item.color }}>
+                    <item.icon />
+                  </div>
                   <div className="contact-item-text">
                     <h4>{item.label}</h4>
                     {item.href ? (
@@ -68,9 +164,9 @@ export default function Contact() {
               ))}
             </div>
 
-            <div style={{ marginTop: '32px' }}>
-              <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Find me online:
+            <div className="contact-social-block">
+              <p className="contact-social-heading">
+                Connect on Social Networks:
               </p>
               <div className="social-links">
                 {socialLinks.map(s => (
@@ -82,8 +178,9 @@ export default function Contact() {
                     className="social-link"
                     aria-label={s.label}
                     title={s.label}
+                    style={{ '--hover-color': s.color }}
                   >
-                    {s.icon}
+                    <s.icon />
                   </a>
                 ))}
               </div>
@@ -133,13 +230,22 @@ export default function Contact() {
             <button
               type="submit"
               className="btn-submit"
+              disabled={status === 'sending'}
               style={{
-                background: sent
-                  ? 'linear-gradient(135deg, #22c55e, #16a34a)'
-                  : 'var(--gradient-hero)'
+                background:
+                  status === 'sent'
+                    ? 'linear-gradient(135deg, #22c55e, #16a34a)'
+                    : status === 'error'
+                    ? 'linear-gradient(135deg, #ef4444, #dc2626)'
+                    : 'var(--gradient-hero)',
+                opacity: status === 'sending' ? 0.75 : 1,
+                cursor: status === 'sending' ? 'not-allowed' : 'pointer'
               }}
             >
-              {sent ? '✓ Message Sent!' : 'Send Message →'}
+              {status === 'sending' && '⏳ Sending...'}
+              {status === 'sent'    && '✓ Message Sent!'}
+              {status === 'error'   && '✕ Failed — Try WhatsApp'}
+              {status === 'idle'    && 'Send Message →'}
             </button>
           </form>
         </div>

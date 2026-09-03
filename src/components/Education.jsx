@@ -1,3 +1,5 @@
+import { FaGraduationCap, FaBuildingColumns, FaSchool } from 'react-icons/fa6'
+
 const educationData = [
   {
     level: 'University',
@@ -5,7 +7,8 @@ const educationData = [
     institution: 'Khulna University of Engineering & Technology (KUET)',
     location: 'Khulna, Bangladesh',
     period: '2023 – Present',
-    grade: 'Ongoing · Batch 22'
+    grade: 'Ongoing · Batch 22',
+    icon: FaGraduationCap
   },
   {
     level: 'College (HSC)',
@@ -13,7 +16,8 @@ const educationData = [
     institution: 'Jalalabad Cantonment Public School and College',
     location: 'Sylhet, Bangladesh',
     period: '2020 – 2022',
-    grade: 'GPA 5.00 / 5.00 · Science Group'
+    grade: 'GPA 5.00 / 5.00 · Science Group',
+    icon: FaBuildingColumns
   },
   {
     level: 'School (SSC)',
@@ -21,7 +25,8 @@ const educationData = [
     institution: 'Rukeya Khatun Lyceum School',
     location: 'Barlekha, Moulvibazar',
     period: '2018 – 2020',
-    grade: 'GPA 5.00 / 5.00 · General Scholarship'
+    grade: 'GPA 5.00 / 5.00 · General Scholarship',
+    icon: FaSchool
   }
 ]
 
@@ -41,7 +46,7 @@ export default function Education() {
               {/* Clean Minimalist Timeline Connector */}
               <div className="edu-connector">
                 <div className="edu-dot">
-                  <span className="edu-dot-inner" />
+                  <edu.icon className="edu-dot-svg" />
                 </div>
                 {i < educationData.length - 1 && (
                   <div className="edu-line" />

@@ -58,16 +58,16 @@ function App() {
 
   return (
     <>
-      <Navbar
-        onNavigate={setPage}
-        currentPage={page}
-        theme={theme}
-        toggleTheme={toggleTheme}
-      />
       {page === 'resume' ? (
         <Resume onBack={() => setPage('home')} />
       ) : (
         <>
+          <Navbar
+            onNavigate={setPage}
+            currentPage={page}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
           <Hero onViewResume={() => setPage('resume')} />
           <About />
           <Education />
@@ -76,9 +76,9 @@ function App() {
           <ClubActivities />
           <Contact />
           <Footer onViewResume={() => setPage('resume')} />
+          <ScrollTop />
         </>
       )}
-      <ScrollTop />
     </>
   )
 }
