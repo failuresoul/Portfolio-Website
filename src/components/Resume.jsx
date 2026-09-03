@@ -23,16 +23,36 @@ export default function Resume({ onBack }) {
   return (
     <div className="cv-page">
       {/* ── Sticky Action Bar (no-print) ── */}
-      <div className="cv-action-bar no-print">
-        <button className="cv-back-btn" onClick={onBack}>
-          ← Back to Portfolio
-        </button>
-        <div className="cv-action-right">
-          <button className="cv-print-btn" onClick={printResume}>
-            ⬇ Download PDF
+      <header className="cv-action-bar no-print">
+        <div className="cv-action-inner">
+          <button className="cv-back-btn" onClick={onBack} title="Return to portfolio">
+            <svg className="cv-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Portfolio</span>
           </button>
+
+          <div className="cv-action-center">
+            <div className="cv-doc-badge">
+              <span className="cv-badge-dot"></span>
+              <span className="cv-doc-name">Curriculum Vitae</span>
+              <span className="cv-doc-pill">A4 Format</span>
+            </div>
+          </div>
+
+          <div className="cv-action-right">
+            <button className="cv-print-btn" onClick={printResume} title="Download or print resume as PDF">
+              <svg className="cv-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* ── CV Paper (A4, multi-page aware) ── */}
       <div className="cv-paper" id="resume-content">
