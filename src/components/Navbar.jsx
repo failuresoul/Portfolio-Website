@@ -1,0 +1,73 @@
+import { useState, useEffect } from 'react'
+
+const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
+]
+
+export default function Navbar({ onNavigate, currentPage }) {
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handler)
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
+
+  const handleNavClick = (e, href) => {
+    if (currentPage !== 'home') {
+      e.preventDefault()
+      onNavigate('home')
+      setTimeout(() => {
+        const el = document.querySelector(href)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+    setMobileOpen(false)
+  }
+
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="navbar-inner">
+          <button
+            className="navbar-logo"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'Space Grotesk, sans-serif', fontSize: '22px', fontWeight: 700 }}
+            onClick={() => onNavigate('home')}
+          >
+            &lt;Nayeem /&gt;
+          </button>
+
+          <ul className={`navbar-links ${mobileOpen ? 'mobile-open' : ''}`}>
+            {navLinks.map(link => (
+              <li key={link.href}>
+                <a href={link.href} onClick={(e) => handleNavClick(e, link.href)}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button className="navbar-cta" onClick={() => onNavigate('resume')}>
+              Resume ↗
+            </button>
+            <button
+              className="navbar-hamburger"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              <span style={{ transform: mobileOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+              <span style={{ opacity: mobileOpen ? 0 : 1 }} />
+              <span style={{ transform: mobileOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
+}
